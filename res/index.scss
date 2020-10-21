@@ -1,0 +1,24 @@
+$color-primary: #3AC2E0;
+$color-white: #FFFFFF;
+$color-gray-off-white: #F5F5F5;
+
+:root {
+    font-size: 62.5%; // normal 16px rem -> 10px
+}
+
+.signup-hero {
+    max-width: 35rem;
+    background-color: $color-gray-off-white;
+    padding: 5rem;
+
+    &__form {
+        button[type="submit"] {
+            background-color: $color-primary;
+            border: none;
+            border-radius: 1px;
+            color: $color-white;
+            text-align: center;
+            font-size: 1.8em;
+        }
+    }
+}

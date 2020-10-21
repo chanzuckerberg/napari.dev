@@ -1,0 +1,16 @@
+:root {
+  font-size: 62.5%; }
+
+.signup-hero {
+  max-width: 35rem;
+  background-color: #F5F5F5;
+  padding: 5rem; }
+  .signup-hero__form button[type="submit"] {
+    background-color: #3AC2E0;
+    border: none;
+    border-radius: 1px;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.8em; }
+
+/*# sourceMappingURL=index.css.map */
