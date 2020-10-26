@@ -1,16 +1,70 @@
 :root {
   font-size: 62.5%; }
 
+.heading {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.04rem; }
+  .heading--large {
+    font-size: 1.8rem;
+    line-height: 2.4rem; }
+
+.body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.04rem; }
+  .body--small {
+    font-size: 1.3rem;
+    line-height: 1.8rem; }
+  .body--large {
+    font-size: 1.6rem;
+    line-height: 2.2rem; }
+
+.accent {
+  font-family: 'Source Serif Pro', serif;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.03rem; }
+  .accent--small {
+    font-weight: 600;
+    font-size: 2.0rem;
+    line-height: 2.8rem; }
+  .accent--medium {
+    font-size: 2.4rem;
+    line-height: 3.6rem; }
+  .accent--large {
+    font-size: 4.8rem;
+    line-height: 5.8rem; }
+
+.highlight {
+  font-family: 'Lato', sans-serif; }
+
 .signup-hero {
-  max-width: 35rem;
   background-color: #F5F5F5;
-  padding: 5rem; }
-  .signup-hero__form button[type="submit"] {
-    background-color: #3AC2E0;
-    border: none;
-    border-radius: 1px;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 1.8em; }
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .signup-hero__form {
+    width: 100%; }
+    .signup-hero__form button[type="submit"] {
+      background-color: #3AC2E0;
+      border: none;
+      border-radius: 1px;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 1.8em; }
+
+.features .feature__tagline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left; }
+.features .feature__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  float: left; }
 
 /*# sourceMappingURL=index.css.map */

@@ -5,27 +5,94 @@
     <title>napari Plugin Developer Portal</title>
 
     <!-- CSS Imports -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;700&family=Source+Serif+Pro:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="res/reset.css" media="all">
     <link rel="stylesheet" type="text/css" href="res/index.css" media="all">
   </head>
 
   <body>
-    <div class="signup-hero">
-      <h4>Get early access to the napari Plugin Developer Portal</h4>
-      <form action="https://chanzuckerberg.us5.list-manage.com/subscribe/post" method="post" class="signup-hero__form">
-        <input type="hidden" name="u" value="79f50c0d0474ff43dffedabda" />
-        <input type="hidden" name="id" value="63bf16756e" />
-        <div>
-          <input type="email" name="EMAIL" aria-label="email address" placeholder="Email" required />
+    <div class="content-container">
+      <main>
+        <div class="header">
+          <h1 class="header__tagline accent accent--large">Share your algorithm with biologists everywhere — no GUI development required.</h1>
+          <p class="header__text body body--large">
+            We get it. You’ve got a killer method for analyzing microscopy data and would love to get it in the hands of more biologists, but you’ve got better things to do than build user interfaces or learn Java. But by building your tool as a napari plugin, you don’t have to worry about any of that. Just build your tool as a python package, add a few lines of code, register it with napari.dev, et voila, its ready for biologists everywhere to use. Napari is a new, Python-based, open source tool for visualizing and annotating 3D, time-series, and multi-channel microscopy data. Led by a team of microscopy experts with deep expertise in large imaging datasets and machine learning, napari is quickly becoming the preferred tool for visualizing and exploring microscopy data. And soon, napari will support analysis plugins, letting you easily package and share your method for segmentation, denoising, tracking, detection and more. Come join us. Be a part of the community of data scientists, bioimage analysts, imaging scientists and biologists lowering barriers to access the latest methods in analyzing microscopy data.
+          </p>
         </div>
-        <div style="position: absolute; left: -5000px;" aria-hidden="true">
-          <!-- bot bait -->
-          <input type="text" name="b_79f50c0d0474ff43dffedabda_63bf16756e" tabindex="-1" value="" />
+        <div class="features">
+          <div class="feature">
+            <div class="feature__tagline"><img src="res/gray_box.svg" alt="a gray box" class="feature__icon"><h3 class="heading heading--large">Python first</h3></div>
+            <p class="body body--small">You shouldn’t have to learn Java just to make your tool easy for biologists to use. napari plugins are written in Python, letting you use the machine learning and scientific computing frameworks you love, like PyTorch, Tensorflow, Dask, and more.</p>
+            <a class="body body--small" href="#">Show more</a>
+          </div>
+          <div class="feature">
+            <div class="feature__tagline"><img src="res/gray_box.svg" alt="a gray box" class="feature__icon"><h3 class="heading heading--large">Testing & deployment services</h3></div>
+            <p class="body body--small">Setting up automated testing of scientific Python tools can be a headache. With our Github integrations, we make it easy for you to make sure your plugin works the way you want & share it with the community when you’re ready.</p>
+            <a class="body body--small" href="#">Show more</a>
+          </div>
+          <div class="feature">
+            <div class="feature__tagline"><img src="res/gray_box.svg" alt="a gray box" class="feature__icon"><h3 class="heading heading--large">Get credit</h3></div>
+            <p class="body body--small">When biologists use your plugin, we want to make sure that you get the credit. We’ll make it easy for biologists to cite your plugin when they publish and let you maintain a public profile showcasing your work.</p>
+            <a class="body body--small" href="#">Show more</a>
+          </div>
         </div>
-        <div>
-          <button type="submit">Sign up!</button>
+        <div class="quotes">
+          <hr class="quotes__divider" />
+          <div class="quote">
+            <img src="res/apps.svg" class="quote__icon" aria-hidden="true">
+            <p class="quote__text">
+              <span class="accent accent--small">“Quote quote quote quote quote quote quote quote quote quote quote quote quote quote quote quote quote”</span>
+              <br>
+              <span class="body body--small">— Quotee</span></p>
+          </div>
+          <hr class="quotes__divider"/>
+          <div class="quote">
+            <img src="res/apps.svg" class="quote__icon" aria-hidden="true">
+            <p class="quote__text">
+              <span class="accent accent--small">“Quote quote quote quote quote quote quote quote quote quote quote quote quote quote quote quote quote quote”</span>
+              <br>
+              <span class="body body--small">— Quotee</span></p>
+          </div>
+          <hr class="quotes__divider"/>
+          <div class="quote">
+            <img src="res/apps.svg" class="quote__icon" aria-hidden="true">
+            <p class="quote__text">
+              <span class="accent accent--small">“Quote quote quote quote quote quote quote quote quote quote quote quote quote quote quote quote quote quote quote quote quote”</span>
+              <br>
+              <span class="body body--small">— Quotee</span></p>
+          </div>
+          <hr class="quotes__divider" />
         </div>
-      </form>
-      <h2>Sign up today for a front-row seat to the next frontier of bioimage analysis.</h2>
+      </main>
+      <footer class="content-container__footer">
+        <ul>
+          <li>About</li>
+          <li>Jobs</li>
+          <li>Contact</li>
+          <li>Privacy policy</li>
+        </ul>
+      </footer>
+    </div>
+    <hr/>
+    <div class="signup-container">
+      <div class="signup-hero">
+        <h4 class="signup-hero__tagline accent accent--small">Get early access to the napari Plugin Developer Portal</h4>
+        <form action="https://chanzuckerberg.us5.list-manage.com/subscribe/post" method="post" class="signup-hero__form">
+          <input type="hidden" name="u" value="79f50c0d0474ff43dffedabda" />
+          <input type="hidden" name="id" value="63bf16756e" />
+          <div>
+            <input type="email" name="EMAIL" aria-label="email address" placeholder="Email" required />
+          </div>
+          <div style="position: absolute; left: -5000px;" aria-hidden="true">
+            <!-- bot bait -->
+            <input type="text" name="b_79f50c0d0474ff43dffedabda_63bf16756e" tabindex="-1" value="" />
+          </div>
+          <div>
+            <button type="submit">Sign up!</button>
+          </div>
+        </form>
+        <h2 class="signup-hero__sinker accent accent--medium">Sign up today for a front-row seat to the next frontier of bioimage analysis.</h2>
+      </div>
     </div>
   </body>
 </html>

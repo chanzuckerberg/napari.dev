@@ -1,17 +1,85 @@
 $color-primary: #3AC2E0;
 $color-white: #FFFFFF;
+$color-black: #000000;
 $color-gray-off-white: #F5F5F5;
 
 :root {
-    font-size: 62.5%; // normal 16px rem -> 10px
+    font-size: 62.5%;  // normal 16px rem -> 10px
+}
+
+// ====================
+//        FONTS
+// ====================
+
+.heading {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 0.04rem;
+
+    &--large {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+    }
+}
+
+.body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.04rem;
+
+    &--small {
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+    }
+
+    &--large {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+    }
+}
+
+.accent {
+    font-family: 'Source Serif Pro', serif;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.03rem;
+
+    &--small {
+        font-weight: 600;
+        font-size: 2.0rem;
+        line-height: 2.8rem;
+    }
+
+    &--medium {
+        font-size: 2.4rem;
+        line-height: 3.6rem;
+    }
+
+    &--large {
+        font-size: 4.8rem;
+        line-height: 5.8rem;
+    }
+}
+
+.highlight {
+    font-family: 'Lato', sans-serif;
+    &--large {
+
+    }
 }
 
 .signup-hero {
-    max-width: 35rem;
     background-color: $color-gray-off-white;
     padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     &__form {
+        width: 100%;
+
         button[type="submit"] {
             background-color: $color-primary;
             border: none;
@@ -19,6 +87,23 @@ $color-gray-off-white: #F5F5F5;
             color: $color-white;
             text-align: center;
             font-size: 1.8em;
+        }
+    }
+}
+
+.features {
+    .feature {
+        &__tagline {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: left;
+        }
+
+        &__icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            float: left;
         }
     }
 }
