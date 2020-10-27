@@ -3,10 +3,10 @@ $color-white: #FFFFFF;
 $color-black: #000000;
 $color-gray-off-white: #F5F5F5;
 $color-gray-medium: #9E9E9E;
-$signup-height: 150px;
+$mobile-signup-height: 9.3rem;
 
 :root {
-    --multiplier: 1;
+    --multiplier: 0.716;
     font-size: calc(var(--multiplier) * 62.5%);  // normal 16px rem -> 10px
 }
 
@@ -72,7 +72,7 @@ $signup-height: 150px;
 
 .content-container {
     padding: 2.4rem;
-    margin-bottom: $signup-height + 50px;
+    margin-bottom: 2 * $mobile-signup-height;
 }
 
 .signup-hero {
@@ -84,7 +84,7 @@ $signup-height: 150px;
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: $signup-height;
+    height: $mobile-signup-height;
 
     &__tagline {
         width: calc(100% - 10rem);
