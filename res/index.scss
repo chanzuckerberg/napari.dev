@@ -2,9 +2,12 @@ $color-primary: #3AC2E0;
 $color-white: #FFFFFF;
 $color-black: #000000;
 $color-gray-off-white: #F5F5F5;
+$color-gray-medium: #9E9E9E;
+$signup-height: 150px;
 
 :root {
-    font-size: 62.5%;  // normal 16px rem -> 10px
+    --multiplier: 1;
+    font-size: calc(var(--multiplier) * 62.5%);  // normal 16px rem -> 10px
 }
 
 // ====================
@@ -63,11 +66,13 @@ $color-gray-off-white: #F5F5F5;
     }
 }
 
-.highlight {
-    font-family: 'Lato', sans-serif;
-    &--large {
+.link {
+    color: $color-primary;
+}
 
-    }
+.content-container {
+    padding: 2.4rem;
+    margin-bottom: $signup-height + 50px;
 }
 
 .signup-hero {
@@ -76,18 +81,44 @@ $color-gray-off-white: #F5F5F5;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: $signup-height;
+
+    &__tagline {
+        width: calc(100% - 10rem);
+    }
 
     &__form {
-        width: 100%;
+        input, button {
+            width: calc(100% - 10rem);
+            height: 5rem;
+            box-sizing: border-box;
+            font-size: 1.8rem;
+            line-height: 2.4rem;
+            border-radius: 0.01rem;
+        }
+
+        input[type="email"] {
+            margin-top: 1.3rem;
+            color: $color-gray-medium;
+            border: 0.01rem solid $color-gray-medium;
+        }
 
         button[type="submit"] {
+            margin-top: 2rem;
             background-color: $color-primary;
             border: none;
-            border-radius: 1px;
             color: $color-white;
             text-align: center;
-            font-size: 1.8em;
         }
+    }
+
+    &__sinker {
+        margin-top: 1.7rem;
+        width: calc(100% - 10rem);
+        display: none;
     }
 }
 
@@ -104,6 +135,30 @@ $color-gray-off-white: #F5F5F5;
             width: 2.5rem;
             height: 2.5rem;
             float: left;
+        }
+    }
+}
+
+.quotes {
+    padding: 0 7.2rem;
+
+    &__divider {
+        border: 0.1rem solid $color-black;
+    }
+    .quote {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 2.4rem;
+
+        &__icon, &__text {
+            margin-top: 2rem;
+        }
+
+        &__icon {
+            width: 2.4rem;
+            height: 2.4rem;
         }
     }
 }

@@ -1,5 +1,6 @@
 :root {
-  font-size: 62.5%; }
+  --multiplier: 1;
+  font-size: calc(var(--multiplier) * 62.5%); }
 
 .heading {
   font-family: 'Source Sans Pro', sans-serif;
@@ -38,24 +39,46 @@
     font-size: 4.8rem;
     line-height: 5.8rem; }
 
-.highlight {
-  font-family: 'Lato', sans-serif; }
+.link {
+  color: #3AC2E0; }
+
+.content-container {
+  padding: 2.4rem;
+  margin-bottom: 200px; }
 
 .signup-hero {
   background-color: #F5F5F5;
   padding: 5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center; }
-  .signup-hero__form {
-    width: 100%; }
-    .signup-hero__form button[type="submit"] {
-      background-color: #3AC2E0;
-      border: none;
-      border-radius: 1px;
-      color: #FFFFFF;
-      text-align: center;
-      font-size: 1.8em; }
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 150px; }
+  .signup-hero__tagline {
+    width: calc(100% - 10rem); }
+  .signup-hero__form input, .signup-hero__form button {
+    width: calc(100% - 10rem);
+    height: 5rem;
+    box-sizing: border-box;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    border-radius: 0.01rem; }
+  .signup-hero__form input[type="email"] {
+    margin-top: 1.3rem;
+    color: #9E9E9E;
+    border: 0.01rem solid #9E9E9E; }
+  .signup-hero__form button[type="submit"] {
+    margin-top: 2rem;
+    background-color: #3AC2E0;
+    border: none;
+    color: #FFFFFF;
+    text-align: center; }
+  .signup-hero__sinker {
+    margin-top: 1.7rem;
+    width: calc(100% - 10rem);
+    display: none; }
 
 .features .feature__tagline {
   display: flex;
@@ -66,5 +89,21 @@
   width: 2.5rem;
   height: 2.5rem;
   float: left; }
+
+.quotes {
+  padding: 0 7.2rem; }
+  .quotes__divider {
+    border: 0.1rem solid #000000; }
+  .quotes .quote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2.4rem; }
+    .quotes .quote__icon, .quotes .quote__text {
+      margin-top: 2rem; }
+    .quotes .quote__icon {
+      width: 2.4rem;
+      height: 2.4rem; }
 
 /*# sourceMappingURL=index.css.map */
