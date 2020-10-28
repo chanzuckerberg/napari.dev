@@ -2,6 +2,9 @@
   --multiplier: 0.716;
   font-size: calc(var(--multiplier) * 62.5%); }
 
+body {
+  min-width: 300px; }
+
 .heading {
   font-family: 'Source Sans Pro', sans-serif;
   font-style: normal;
@@ -30,8 +33,8 @@
   letter-spacing: 0.03rem; }
   .accent--small {
     font-weight: 600;
-    font-size: 2.0rem;
-    line-height: 2.8rem; }
+    font-size: 1.4rem;
+    line-height: 2.0rem; }
   .accent--medium {
     font-size: 2.4rem;
     line-height: 3.6rem; }
@@ -44,40 +47,40 @@
 
 .content-container {
   padding: 2.4rem;
-  margin-bottom: 18.6rem; }
+  margin-bottom: 26rem; }
 
 .signup-hero {
   background-color: #F5F5F5;
-  padding: 5rem;
+  --padding: 20px;
+  padding: var(--padding);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 9.3rem; }
+  min-width: 300px;
+  height: 13rem; }
   .signup-hero__tagline {
-    width: calc(100% - 10rem); }
+    width: calc(100% - 2 * var(--padding)); }
   .signup-hero__form input, .signup-hero__form button {
-    width: calc(100% - 10rem);
+    width: calc(100% - 2 * var(--padding));
     height: 5rem;
     box-sizing: border-box;
     font-size: 1.8rem;
     line-height: 2.4rem;
     border-radius: 0.01rem; }
   .signup-hero__form input[type="email"] {
-    margin-top: 1.3rem;
     color: #9E9E9E;
     border: 0.01rem solid #9E9E9E; }
   .signup-hero__form button[type="submit"] {
-    margin-top: 2rem;
     background-color: #3AC2E0;
     border: none;
     color: #FFFFFF;
+    margin-top: 0.5rem;
     text-align: center; }
   .signup-hero__sinker {
-    margin-top: 1.7rem;
-    width: calc(100% - 10rem);
+    width: calc(100% - 2 * var(--padding));
     display: none; }
 
 .features .feature__tagline {

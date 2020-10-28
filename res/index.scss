@@ -3,7 +3,8 @@ $color-white: #FFFFFF;
 $color-black: #000000;
 $color-gray-off-white: #F5F5F5;
 $color-gray-medium: #9E9E9E;
-$mobile-signup-height: 9.3rem;
+$mobile-signup-height: 13rem;
+$min-width: 300px;
 
 :root {
     --multiplier: 0.716;
@@ -13,6 +14,10 @@ $mobile-signup-height: 9.3rem;
 // ====================
 //        FONTS
 // ====================
+
+body {
+    min-width: $min-width;
+}
 
 .heading {
     font-family: 'Source Sans Pro', sans-serif;
@@ -51,8 +56,8 @@ $mobile-signup-height: 9.3rem;
 
     &--small {
         font-weight: 600;
-        font-size: 2.0rem;
-        line-height: 2.8rem;
+        font-size: 1.4rem;
+        line-height: 2.0rem;
     }
 
     &--medium {
@@ -77,22 +82,24 @@ $mobile-signup-height: 9.3rem;
 
 .signup-hero {
     background-color: $color-gray-off-white;
-    padding: 5rem;
+    --padding: 20px;
+    padding: var(--padding);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     position: fixed;
     bottom: 0;
     width: 100%;
+    min-width: $min-width;
     height: $mobile-signup-height;
 
     &__tagline {
-        width: calc(100% - 10rem);
+        width: calc(100% - 2 * var(--padding));
     }
 
     &__form {
         input, button {
-            width: calc(100% - 10rem);
+            width: calc(100% - 2 * var(--padding));
             height: 5rem;
             box-sizing: border-box;
             font-size: 1.8rem;
@@ -101,23 +108,21 @@ $mobile-signup-height: 9.3rem;
         }
 
         input[type="email"] {
-            margin-top: 1.3rem;
             color: $color-gray-medium;
             border: 0.01rem solid $color-gray-medium;
         }
 
         button[type="submit"] {
-            margin-top: 2rem;
             background-color: $color-primary;
             border: none;
             color: $color-white;
+            margin-top: 0.5rem;
             text-align: center;
         }
     }
 
     &__sinker {
-        margin-top: 1.7rem;
-        width: calc(100% - 10rem);
+        width: calc(100% - 2 * var(--padding));
         display: none;
     }
 }
