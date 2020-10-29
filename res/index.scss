@@ -20,9 +20,9 @@ body {
 }
 
 .heading {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Trispace', sans-serif;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0.04rem;
 
     &--large {
@@ -32,9 +32,9 @@ body {
 }
 
 .body {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
     letter-spacing: 0.04rem;
 
     &--small {
@@ -42,20 +42,26 @@ body {
         line-height: 1.8rem;
     }
 
-    &--large {
+    &--medium {
         font-size: 1.6rem;
         line-height: 2.2rem;
+    }
+
+    &--large {
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
     }
 }
 
 .accent {
-    font-family: 'Source Serif Pro', serif;
+    font-family: 'Trispace', sans-serif;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.03rem;
 
     &--small {
-        font-weight: 600;
+        font-weight: 300;
         font-size: 1.4rem;
         line-height: 2.0rem;
     }
@@ -86,7 +92,7 @@ body {
     padding: var(--padding);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -100,7 +106,7 @@ body {
     &__form {
         input, button {
             width: calc(100% - 2 * var(--padding));
-            height: 5rem;
+            height: 3rem;
             box-sizing: border-box;
             font-size: 1.8rem;
             line-height: 2.4rem;
@@ -145,7 +151,7 @@ body {
 }
 
 .quotes {
-    padding: 0 7.2rem;
+    margin: 0 5.6rem;
 
     &__divider {
         border: 0.1rem solid $color-black;
