@@ -1,13 +1,15 @@
-$color-primary: #3AC2E0;
+$color-primary: #1AE3FF;
 $color-white: #FFFFFF;
 $color-black: #000000;
 $color-gray-off-white: #F5F5F5;
 $color-gray-medium: #9E9E9E;
-$mobile-signup-height: 13rem;
+$mobile-signup-height: 9.3rem;
+$line-height: 1.5em;
 $min-width: 300px;
 
 :root {
-    --multiplier: 0.716;
+    --multiplier: 1;
+    --smallest-unit: 0.0716rem;
     font-size: calc(var(--multiplier) * 62.5%);  // normal 16px rem -> 10px
 }
 
@@ -20,7 +22,7 @@ body {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
-    letter-spacing: 0.04rem;
+    letter-spacing: 0.01rem;
 }
 
 h1, h2, h3, h4, h5, h6, q {
@@ -28,28 +30,21 @@ h1, h2, h3, h4, h5, h6, q {
     font-style: normal;  
     font-weight: 600;
     letter-spacing: 0.03rem; 
-    margin: 0 0 1rem 0; 
+    margin: 0 0 1rem 0;
+    line-height: 1.5em;
 }
 
 h1 {
-    font-size: 4.8rem;
-    line-height: 5.8rem;
+    font-size: 2.5rem;
 }
 
 h2 {
-    font-size: 2.4rem;
-    line-height: 3.6rem;
+    font-size: 1.7rem;
 }
 
 h3 {
-    font-size: 1.8rem;
-    line-height: 2.4rem;
-}
-
-h4 {
-    font-weight: 300;
-    font-size: 1.4rem;
-    line-height: 2.0rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
 }
 
 q {
@@ -60,37 +55,14 @@ q {
     display: block;
 }
 
-.body {
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    letter-spacing: 0.04rem;
-
-    &--small {
-        font-size: 1.3rem;
-        line-height: 1.8rem;
-    }
-
-    &--medium {
-        font-size: 1.6rem;
-        line-height: 2.2rem;
-    }
-
-    &--large {
-        font-weight: 600;
-        font-size: 1.6rem;
-        line-height: 2.4rem;
-    }
-}
-
 p, a {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
-    letter-spacing: 0.04rem;
+    letter-spacing: 0.01rem;
 
-    font-size: 1.6rem;
-    line-height: 2.2rem;
+    font-size: 1rem;
+    line-height: $line-height;
 }
 
 p {
@@ -117,6 +89,10 @@ a {
     }
 }
 
+.header > p {
+    font-size: 1.2rem;
+}
+
 .signup-container {
     width: 100%;
     min-width: $min-width;
@@ -137,16 +113,17 @@ a {
     &__form {
         input, button {
             width: 100%;
-            height: 3rem;
+            height: 2rem;
             box-sizing: border-box;
-            font-size: 1.8rem;
-            line-height: 2.4rem;
-            border-radius: 0.01rem;
+            font-size: 1rem;
+            line-height: $line-height;
+            border-radius: var(--smallest-unit);
         }
 
         input[type="email"] {
             color: $color-gray-medium;
-            border: 0.01rem solid $color-gray-medium;
+            border: var(--smallest-unit) solid $color-gray-medium;
+            padding: 0.5rem;
         }
 
         button[type="submit"] {
@@ -196,7 +173,7 @@ footer {
             float: left;
         }
 
-        h3::before {
+        h2::before {
             display: block;
             float: left;
             content: url('gray_box.svg');
@@ -212,41 +189,43 @@ footer {
 }
 
 .quotes {
-    margin: 2.5rem 5.6rem;
+    margin: 2rem;
 
     .quote {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding-bottom: 2.4rem;
-        border-top: 0.1rem solid $color-black;
+        border-top: var(--smallest-unit) solid $color-black;
 
         &__icon, &__text {
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
         &__icon {
-            width: 2.4rem;
-            height: 2.4rem;
+            width: 1rem;
+            height: 1rem;
         }
+    
         & + .last {
-            border-bottom: 0.1rem solid $color-black;
+            border-bottom: var(--smallest-unit) solid $color-black;
         }
 
         q {
-            margin-bottom: 2.0rem;
+            margin-bottom: 1.0rem;
+        }
+
+        p {
+            font-weight: 600;
         }
     }
 
     .learn-more {
-        margin: 2.5rem 0;
+        margin: 1.5rem 0;
+        font-size: 1.4rem;
 
-        ul > li {
-            a {
-                font-size: 1.6rem;
-                line-height: 2.2rem;
-            }
+        p {
+            margin-bottom: 0;
         }
     }
 }
