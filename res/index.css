@@ -91,21 +91,17 @@ a {
   width: 100%;
   min-width: 300px;
   box-sizing: border-box;
-  margin-bottom: 13rem;
 }
 .content-container main {
-  margin: 2.4rem;
+  padding: 2.4rem;
+  box-sizing: border-box;
 }
 
 .signup-container {
   width: 100%;
   min-width: 300px;
-  box-sizing: border-box;
-  background-color: #F5F5F5;
-  padding: 3.3333333333% 6.6666666667%;
-  position: fixed;
+  position: sticky;
   bottom: 0;
-  height: 13rem;
 }
 
 .signup-hero {
@@ -113,14 +109,17 @@ a {
   flex-direction: column;
   justify-content: space-around;
   width: 100%;
+  box-sizing: border-box;
+  background-color: #F5F5F5;
+  padding: 3.3333333333% 6.6666666667%;
 }
 .signup-hero__form input, .signup-hero__form button {
   width: 100%;
-  height: 3rem;
   box-sizing: border-box;
   font-size: 1.8rem;
   line-height: 2.4rem;
   border-radius: 0.01rem;
+  padding: 0.8rem 0.5rem;
 }
 .signup-hero__form input[type=email] {
   color: #9E9E9E;
@@ -186,7 +185,7 @@ footer ul > li a {
   align-items: center;
   justify-content: center;
   padding-bottom: 2.4rem;
-  border-top: 0.1rem solid #000000;
+  border-bottom: 0.1rem solid #000000;
 }
 .quotes .quote__icon, .quotes .quote__text {
   margin-top: 2rem;
@@ -195,8 +194,8 @@ footer ul > li a {
   width: 2.4rem;
   height: 2.4rem;
 }
-.quotes .quote + .last {
-  border-bottom: 0.1rem solid #000000;
+.quotes .quote:first-child {
+  border-top: 0.1rem solid #000000;
 }
 .quotes .quote q {
   margin-bottom: 2rem;
@@ -207,6 +206,57 @@ footer ul > li a {
 .quotes .learn-more ul > li a {
   font-size: 1.6rem;
   line-height: 2.2rem;
+}
+
+@media all and (min-width: 400px) and (max-width: 749px) {
+  .signup-hero__form input[type=email] {
+    width: 75%;
+    float: left;
+  }
+  .signup-hero__form button[type=submit] {
+    width: 20%;
+    float: right;
+    margin: 1px 0 0 0;
+  }
+}
+@media all and (min-width: 750px) {
+  .content-container {
+    --content-percentage: .6;
+    width: calc(var(--content-percentage) * 100%);
+    float: left;
+  }
+  .content-container main, .content-container footer {
+    max-width: calc(var(--content-percentage) * 1050px);
+    float: right;
+  }
+
+  .signup-container {
+    --content-percentage: .4;
+    width: calc(var(--content-percentage) * 100%);
+    height: 100%;
+    position: fixed;
+    bottom: auto;
+    right: 0;
+    background: #9E9E9E url(apps.svg) no-repeat 0 0;
+    display: flex;
+    align-items: center;
+  }
+  .signup-container .signup-hero {
+    width: 80%;
+    max-width: 300px;
+    margin-left: 50px;
+  }
+  .signup-container .signup-hero__sinker {
+    display: block;
+  }
+  .signup-container .signup-hero__form input[type=email] {
+    padding: 1.5rem 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+  .signup-container .signup-hero__form button[type=submit] {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

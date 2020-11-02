@@ -3,8 +3,8 @@ $color-white: #FFFFFF;
 $color-black: #000000;
 $color-gray-off-white: #F5F5F5;
 $color-gray-medium: #9E9E9E;
-$mobile-signup-height: 13rem;
 $min-width: 300px;
+$max-width: 1050px;
 
 :root {
     --multiplier: 0.716;
@@ -109,23 +109,19 @@ a {
 .content-container {
     width: 100%;
     min-width: $min-width;
-    box-sizing: border-box;    
-    margin-bottom: $mobile-signup-height;
+    box-sizing: border-box;
 
     main {
-        margin: 2.4rem;
+        padding: 2.4rem;
+        box-sizing: border-box;
     }
 }
 
 .signup-container {
     width: 100%;
     min-width: $min-width;
-    box-sizing: border-box;
-    background-color: $color-gray-off-white;
-    padding: (10px / $min-width) * 100% (20px / $min-width) * 100%;
-    position: fixed;
+    position: sticky;
     bottom: 0;
-    height: $mobile-signup-height;
 }
 
 .signup-hero {
@@ -133,15 +129,18 @@ a {
     flex-direction: column;
     justify-content: space-around;
     width: 100%;
+    box-sizing: border-box;
+    background-color: $color-gray-off-white;
+    padding: (10px / $min-width) * 100% (20px / $min-width) * 100%;
 
     &__form {
         input, button {
             width: 100%;
-            height: 3rem;
             box-sizing: border-box;
             font-size: 1.8rem;
             line-height: 2.4rem;
             border-radius: 0.01rem;
+            padding: .8rem .5rem;
         }
 
         input[type="email"] {
@@ -220,7 +219,7 @@ footer {
         align-items: center;
         justify-content: center;
         padding-bottom: 2.4rem;
-        border-top: 0.1rem solid $color-black;
+        border-bottom: 0.1rem solid $color-black;
 
         &__icon, &__text {
             margin-top: 2rem;
@@ -230,8 +229,8 @@ footer {
             width: 2.4rem;
             height: 2.4rem;
         }
-        & + .last {
-            border-bottom: 0.1rem solid $color-black;
+        &:first-child {
+            border-top: 0.1rem solid $color-black;
         }
 
         q {
@@ -247,6 +246,71 @@ footer {
                 font-size: 1.6rem;
                 line-height: 2.2rem;
             }
+        }
+    }
+}
+
+// ====================
+//    MEDIA QUERIES
+// ====================
+@media all and (min-width: 400px) and (max-width: 749px) {
+    .signup-hero {
+        &__form {
+            input[type="email"] {
+                width: 75%;
+                float: left;
+            }
+            button[type="submit"] {
+                width: 20%;
+                float: right;
+                margin: 1px 0 0 0;
+            }
+        }
+    }
+}
+
+@media all and (min-width: 750px) {
+    .content-container {       
+        --content-percentage: .6;        
+        width: calc(var(--content-percentage) * 100%);
+        float: left;
+        
+        main, footer {
+            max-width: calc(var(--content-percentage) * #{$max-width});
+            float:right;
+        }
+    }
+
+    .signup-container {
+        --content-percentage: .4;
+        width: calc(var(--content-percentage) * 100%);
+        height: 100%;
+        position: fixed;
+        bottom: auto;
+        right:0;
+        background: $color-gray-medium url(apps.svg) no-repeat 0 0; //replace bg image
+        display:flex; 
+        align-items:center;
+
+        .signup-hero {
+            width: 80%;
+            max-width: 300px;
+            margin-left: 50px;
+
+            &__sinker {
+                display: block;
+            }
+
+            &__form {
+                input[type="email"] {
+                    padding: 1.5rem 1.6rem;
+                    margin-bottom: 1.2rem;
+                }
+                button[type="submit"] {
+                    padding: 1.5rem;
+                    margin-bottom: 1.5rem;
+                }
+            }            
         }
     }
 }
