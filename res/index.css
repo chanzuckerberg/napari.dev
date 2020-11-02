@@ -1,6 +1,7 @@
 @charset "UTF-8";
 :root {
-  --multiplier: 0.716;
+  --multiplier: 1;
+  --smallest-unit: 0.0716rem;
   font-size: calc(var(--multiplier) * 62.5%);
 }
 
@@ -9,7 +10,7 @@ body {
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
-  letter-spacing: 0.04rem;
+  letter-spacing: 0.01rem;
 }
 
 h1, h2, h3, h4, h5, h6, q {
@@ -18,27 +19,20 @@ h1, h2, h3, h4, h5, h6, q {
   font-weight: 600;
   letter-spacing: 0.03rem;
   margin: 0 0 1rem 0;
+  line-height: 1.5em;
 }
 
 h1 {
-  font-size: 4.8rem;
-  line-height: 5.8rem;
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-size: 2.4rem;
-  line-height: 3.6rem;
+  font-size: 1.7rem;
 }
 
 h3 {
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-}
-
-h4 {
-  font-weight: 300;
-  font-size: 1.4rem;
-  line-height: 2rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
 }
 
 q {
@@ -49,33 +43,13 @@ q {
   display: block;
 }
 
-.body {
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0.04rem;
-}
-.body--small {
-  font-size: 1.3rem;
-  line-height: 1.8rem;
-}
-.body--medium {
-  font-size: 1.6rem;
-  line-height: 2.2rem;
-}
-.body--large {
-  font-weight: 600;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-}
-
 p, a {
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 400;
-  letter-spacing: 0.04rem;
-  font-size: 1.6rem;
-  line-height: 2.2rem;
+  letter-spacing: 0.01rem;
+  font-size: 1rem;
+  line-height: 1.5em;
 }
 
 p {
@@ -83,7 +57,7 @@ p {
 }
 
 a {
-  color: #3AC2E0;
+  color: #1AE3FF;
   text-decoration: none;
 }
 
@@ -95,6 +69,10 @@ a {
 .content-container main {
   padding: 2.4rem;
   box-sizing: border-box;
+}
+
+.header > p {
+  font-size: 1.2rem;
 }
 
 .signup-container {
@@ -115,18 +93,19 @@ a {
 }
 .signup-hero__form input, .signup-hero__form button {
   width: 100%;
-  box-sizing: border-box;
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-  border-radius: 0.01rem;
   padding: 0.8rem 0.5rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+  line-height: 1.5em;
+  border-radius: var(--smallest-unit);
 }
 .signup-hero__form input[type=email] {
   color: #9E9E9E;
-  border: 0.01rem solid #9E9E9E;
+  border: var(--smallest-unit) solid #9E9E9E;
+  padding: 0.5rem;
 }
 .signup-hero__form button[type=submit] {
-  background-color: #3AC2E0;
+  background-color: #1AE3FF;
   border: none;
   color: #FFFFFF;
   margin-top: 0.5rem;
@@ -138,7 +117,7 @@ a {
 
 footer {
   width: 100%;
-  background-color: #3AC2E0;
+  background-color: #1AE3FF;
   box-sizing: border-box;
   padding: 2rem 4rem;
 }
@@ -164,7 +143,7 @@ footer ul > li a {
   height: 2.5rem;
   float: left;
 }
-.features .feature h3::before {
+.features .feature h2::before {
   display: block;
   float: left;
   content: url("gray_box.svg");
@@ -177,35 +156,37 @@ footer ul > li a {
 }
 
 .quotes {
-  margin: 2.5rem 5.6rem;
+  margin: 2rem;
 }
 .quotes .quote {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-bottom: 2.4rem;
-  border-bottom: 0.1rem solid #000000;
+  border-bottom: var(--smallest-unit) solid #000000;
 }
 .quotes .quote__icon, .quotes .quote__text {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .quotes .quote__icon {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 1rem;
+  height: 1rem;
 }
 .quotes .quote:first-child {
-  border-top: 0.1rem solid #000000;
+  border-top: var(--smallest-unit) solid #000000;
 }
 .quotes .quote q {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+.quotes .quote p {
+  font-weight: 600;
 }
 .quotes .learn-more {
-  margin: 2.5rem 0;
+  margin: 1.5rem 0;
+  font-size: 1.4rem;
 }
-.quotes .learn-more ul > li a {
-  font-size: 1.6rem;
-  line-height: 2.2rem;
+.quotes .learn-more p {
+  margin-bottom: 0;
 }
 
 @media all and (min-width: 400px) and (max-width: 749px) {
