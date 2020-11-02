@@ -253,10 +253,14 @@ footer {
         width: calc(var(--content-percentage) * 100%);
         float: left;
         
-        main, footer {
+        main {
             max-width: calc(var(--content-percentage) * #{$max-width});
-            float:right;
+            float: right;
         }
+    }
+
+    footer {
+        float: inline-end;
     }
 
     .signup-container {

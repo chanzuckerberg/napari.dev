@@ -165,9 +165,12 @@ footer {
     --content-percentage: .6;
     width: calc(var(--content-percentage) * 100%);
     float: left; }
-    .content-container main, .content-container footer {
+    .content-container main {
       max-width: calc(var(--content-percentage) * 1050px);
       float: right; }
+
+  footer {
+    float: inline-end; }
 
   .signup-container {
     --content-percentage: .4;
