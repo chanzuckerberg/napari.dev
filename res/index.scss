@@ -18,7 +18,6 @@ $max-width: 1050px;
 // ====================
 
 body {
-    min-width: $min-width;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -78,14 +77,23 @@ a {
 // ====================
 //        LAYOUT
 // ====================
-.content-container {
-    width: 100%;
-    min-width: $min-width;
-    box-sizing: border-box;
 
-    main {
-        padding: 2.4rem;
+.container {
+    min-width: $min-width;
+
+    &__content {
+        width: 100%;
+        min-width: $min-width;
         box-sizing: border-box;
+
+        main {
+            padding: 2.4rem;
+            box-sizing: border-box;
+        }
+    }
+
+    &__signup {
+        display: none;
     }
 }
 
@@ -93,14 +101,8 @@ a {
     font-size: 1.2rem;
 }
 
-.signup-container {
-    width: 100%;
-    min-width: $min-width;
-    position: sticky;
-    bottom: 0;
-}
-
 .signup-hero {
+    min-width: $min-width;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -108,14 +110,16 @@ a {
     box-sizing: border-box;
     background-color: $color-gray-off-white;
     padding: (10px / $min-width) * 100% (20px / $min-width) * 100%;
+    position: sticky;
+    bottom: 0;
 
     &__form {
         input, button {
             width: 100%;
-            padding: .8rem .5rem;
             box-sizing: border-box;
             font-size: 1rem;
             line-height: $line-height;
+            height: 2rem;
             border-radius: var(--smallest-unit);
         }
 
@@ -141,6 +145,7 @@ a {
 
 footer {
     width: 100%;
+    min-width: $min-width;
     background-color: $color-primary;
     box-sizing: border-box;
     padding: 2rem 4rem;
@@ -170,15 +175,6 @@ footer {
             width: 2.5rem;
             height: 2.5rem;
             float: left;
-        }
-
-        h2::before {
-            display: block;
-            float: left;
-            content: url('gray_box.svg');
-            width: 2.4rem;
-            height: 2.4rem;
-            margin-right: 2rem;
         }
 
         p {
@@ -248,23 +244,26 @@ footer {
 }
 
 @media all and (min-width: 750px) {
+    .signup-hero--mobile {
+        display: none;
+    }
+
     .container {
         display: flex;
         flex-direction: row;
     }
 
-    .content-container {       
-        --content-percentage: .6;
+    .container__content {
         float: left;
+        flex: 3;
         
         main {
-            max-width: calc(var(--content-percentage) * #{$max-width});
             float: right;
         }
     }
 
-    .signup-container {
-        --content-percentage: .4;
+    .container__signup {
+        flex: 2;
         height: 100vh;
         position: sticky;
         top: 0;
