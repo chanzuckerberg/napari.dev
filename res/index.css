@@ -1,7 +1,8 @@
 :root {
-  --multiplier: 1;
   --smallest-unit: 0.0716rem;
-  font-size: calc(var(--multiplier) * 62.5%); }
+  --gutter: calc((20 / 300) * 100vw);
+  --column: calc((100vw - 4 * var(--gutter)) / 3);
+  font-size: 62.5%; }
 
 body {
   font-family: 'Inter', sans-serif;
@@ -30,7 +31,7 @@ h3 {
 q {
   font-weight: 300;
   font-size: 1.4rem;
-  line-height: 2.0rem;
+  line-height: 1.5em;
   quotes: '\00AB' '\00BB' '\201E' '\201C';
   display: block; }
 
@@ -46,18 +47,16 @@ p {
   margin: 0 0 2rem 0; }
 
 a {
-  color: #1AE3FF;
+  color: #0286FF;
   text-decoration: none; }
 
 .container {
   min-width: 300px; }
   .container__content {
     width: 100%;
-    min-width: 300px;
-    box-sizing: border-box; }
+    min-width: 300px; }
     .container__content main {
-      padding: 2.4rem;
-      box-sizing: border-box; }
+      padding: var(--gutter); }
   .container__signup {
     display: none; }
 
@@ -75,30 +74,34 @@ a {
   padding: 3.3333333333% 6.6666666667%;
   position: sticky;
   bottom: 0; }
-  .signup-hero__form input, .signup-hero__form button {
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 1rem;
-    line-height: 1.5em;
-    height: 2rem;
-    border-radius: var(--smallest-unit); }
-  .signup-hero__form input[type="email"] {
-    color: #9E9E9E;
-    border: var(--smallest-unit) solid #9E9E9E;
-    padding: 0.5rem; }
-  .signup-hero__form button[type="submit"] {
-    background-color: #1AE3FF;
-    border: none;
-    color: #FFFFFF;
-    margin-top: 0.5rem;
-    text-align: center; }
+  .signup-hero__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%; }
+    .signup-hero__form * {
+      box-sizing: border-box;
+      font-size: 1rem;
+      line-height: 1.5em;
+      height: 2rem;
+      border-radius: var(--smallest-unit);
+      padding: 0; }
+    .signup-hero__form input[type="email"] {
+      color: #9E9E9E;
+      border: var(--smallest-unit) solid #9E9E9E;
+      padding: 0.5rem; }
+    .signup-hero__form button[type="submit"] {
+      background-color: #0286FF;
+      border: none;
+      color: #FFFFFF;
+      text-align: center;
+      margin-top: 0.5rem; }
   .signup-hero__sinker {
     display: none; }
 
 footer {
   width: 100%;
   min-width: 300px;
-  background-color: #1AE3FF;
+  background-color: #0286FF;
   box-sizing: border-box;
   padding: 2rem 4rem; }
   footer ul > li {
@@ -109,51 +112,50 @@ footer {
 
 .features .feature {
   margin: 0 0 2rem 0; }
-  .features .feature__tagline {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left; }
   .features .feature__icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    float: left; }
+    width: var(--column);
+    height: var(--column);
+    content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><path d="M0,0h1v1H0" fill="%23C4C4C4"/></svg>'); }
   .features .feature p {
     margin: 0; }
 
-.quotes {
-  margin: 2rem; }
-  .quotes .quote {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-bottom: var(--smallest-unit) solid #000000; }
-    .quotes .quote__icon, .quotes .quote__text {
-      margin-top: 1rem; }
-    .quotes .quote__icon {
-      width: 1rem;
-      height: 1rem; }
-    .quotes .quote:first-child {
-      border-top: var(--smallest-unit) solid #000000; }
-    .quotes .quote q {
-      margin-bottom: 1.0rem; }
-    .quotes .quote p {
-      font-weight: 600; }
-  .quotes .learn-more {
-    margin: 1.5rem 0;
-    font-size: 1.4rem; }
-    .quotes .learn-more p {
-      margin-bottom: 0; }
+.quotes .quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: var(--smallest-unit) solid #000000; }
+  .quotes .quote__icon, .quotes .quote__text {
+    margin-top: 1rem; }
+  .quotes .quote__icon {
+    width: 1rem;
+    height: 1rem; }
+  .quotes .quote:first-child {
+    border-top: var(--smallest-unit) solid #000000; }
+  .quotes .quote q {
+    margin-bottom: 1.0rem; }
+  .quotes .quote p {
+    font-weight: 600; }
+.quotes .learn-more {
+  margin: 1.5rem 0;
+  font-size: 1.4rem; }
+  .quotes .learn-more p {
+    margin-bottom: 0; }
 
+@media all and (max-width: 299px) {
+  :root {
+    --gutter: 2rem; } }
 @media all and (min-width: 400px) and (max-width: 749px) {
-  .signup-hero__form input[type="email"] {
-    width: 75%;
-    float: left; }
-  .signup-hero__form button[type="submit"] {
-    width: 20%;
-    float: right;
-    margin: 1px 0 0 0; } }
+  .signup-hero__form {
+    flex-direction: row;
+    justify-content: space-between; }
+    .signup-hero__form * {
+      height: 2.6rem; }
+    .signup-hero__form input[type="email"] {
+      width: calc(2 * var(--column) + var(--gutter)); }
+    .signup-hero__form button[type="submit"] {
+      width: var(--column);
+      margin: 0; } }
 @media all and (min-width: 750px) {
   .signup-hero--mobile {
     display: none; }

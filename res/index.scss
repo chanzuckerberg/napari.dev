@@ -1,4 +1,4 @@
-$color-primary: #1AE3FF;
+$color-primary-light: #0286FF;
 $color-white: #FFFFFF;
 $color-black: #000000;
 $color-gray-off-white: #F5F5F5;
@@ -8,9 +8,10 @@ $min-width: 300px;
 $max-width: 1050px;
 
 :root {
-    --multiplier: 1;
     --smallest-unit: 0.0716rem;
-    font-size: calc(var(--multiplier) * 62.5%);  // normal 16px rem -> 10px
+    --gutter: calc((20 / 300) * 100vw);
+    --column: calc((100vw - 4 * var(--gutter)) / 3);
+    font-size: 62.5%;  // normal 16px rem -> 10px
 }
 
 // ====================
@@ -30,7 +31,7 @@ h1, h2, h3, h4, h5, h6, q {
     font-weight: 600;
     letter-spacing: 0.03rem; 
     margin: 0 0 1rem 0;
-    line-height: 1.5em;
+    line-height: $line-height;
 }
 
 h1 {
@@ -49,7 +50,7 @@ h3 {
 q {
     font-weight: 300;
     font-size: 1.4rem;
-    line-height: 2.0rem;
+    line-height: $line-height;
     quotes: '\00AB' '\00BB' '\201E' '\201C';
     display: block;
 }
@@ -69,7 +70,7 @@ p {
 }
 
 a {
-    color: $color-primary;
+    color: $color-primary-light;
     text-decoration: none;
 }
 
@@ -84,11 +85,9 @@ a {
     &__content {
         width: 100%;
         min-width: $min-width;
-        box-sizing: border-box;
 
         main {
-            padding: 2.4rem;
-            box-sizing: border-box;
+            padding: var(--gutter);
         }
     }
 
@@ -114,13 +113,17 @@ a {
     bottom: 0;
 
     &__form {
-        input, button {
-            width: 100%;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        * {
             box-sizing: border-box;
             font-size: 1rem;
             line-height: $line-height;
             height: 2rem;
             border-radius: var(--smallest-unit);
+            padding: 0;
         }
 
         input[type="email"] {
@@ -130,11 +133,11 @@ a {
         }
 
         button[type="submit"] {
-            background-color: $color-primary;
+            background-color: $color-primary-light;
             border: none;
             color: $color-white;
-            margin-top: 0.5rem;
             text-align: center;
+            margin-top: 0.5rem;
         }
     }
 
@@ -146,7 +149,7 @@ a {
 footer {
     width: 100%;
     min-width: $min-width;
-    background-color: $color-primary;
+    background-color: $color-primary-light;
     box-sizing: border-box;
     padding: 2rem 4rem;
 
@@ -164,28 +167,20 @@ footer {
     .feature {
         margin: 0 0 2rem 0;
 
-        &__tagline {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: left;
-        }
-
         &__icon {
-            width: 2.5rem;
-            height: 2.5rem;
-            float: left;
+            width: var(--column);
+            height: var(--column);
+            // remove below when real content added
+            content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><path d="M0,0h1v1H0" fill="%23C4C4C4"/></svg>');
         }
 
         p {
-            margin:0;
+            margin: 0;
         }
     }
 }
 
 .quotes {
-    margin: 2rem;
-
     .quote {
         display: flex;
         flex-direction: column;
@@ -227,19 +222,35 @@ footer {
 // ====================
 //    MEDIA QUERIES
 // ====================
+@media all and (max-width: 299px) {
+    :root {
+        --gutter: 2rem;
+    }
+}
+
 @media all and (min-width: 400px) and (max-width: 749px) {
-    .signup-hero {
-        &__form {
-            input[type="email"] {
-                width: 75%;
-                float: left;
-            }
-            button[type="submit"] {
-                width: 20%;
-                float: right;
-                margin: 1px 0 0 0;
-            }
+    .signup-hero__form {
+        flex-direction: row;
+        justify-content: space-between;
+
+        * {
+            height: 2.6rem;
         }
+
+        input[type="email"] {
+            width: calc(2 * var(--column) + var(--gutter));
+        }
+
+        button[type="submit"] {
+            width: var(--column);
+            margin: 0;
+        }
+    }
+}
+
+@media all and (min-width: 535px) {
+    :root {
+        
     }
 }
 
