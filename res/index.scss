@@ -9,7 +9,6 @@ $max-width: 1050px;
 :root {
     --smallest-unit: 0.0716rem;
     --gutter: calc((20 / 300) * 100vw);
-    --letter-spacing: 0.01rem;
     --column: calc((100vw - 4 * var(--gutter)) / 3);
     font-size: 62.5%;  // normal 16px rem -> 10px
 }
@@ -21,7 +20,7 @@ $max-width: 1050px;
 
 %text-spacing {
     @extend %text;
-    letter-spacing: var(--letter-spacing);
+    letter-spacing: 0.01rem;
 }
 
 // ====================
@@ -113,8 +112,8 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 100%;
     box-sizing: border-box;
+    width: 100%;
     background-color: $color-gray-off-white;
     padding: 1rem var(--gutter);
     padding-bottom: 2rem;
@@ -267,11 +266,16 @@ footer {
 
 @media all and (min-width: 535px) {
     :root {
-        font-size: calc(100vw / 53.5);
+        --width-base: 535;
+        font-size: calc(100vw / calc(var(--width-base) / 10));
     }
 }
 
 @media all and (min-width: 750px) {
+    :root {
+        --width-base: 750;
+    }
+
     .signup-hero--mobile {
         display: none;
     }

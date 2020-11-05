@@ -1,7 +1,6 @@
 :root {
   --smallest-unit: 0.0716rem;
   --gutter: calc((20 / 300) * 100vw);
-  --letter-spacing: 0.01rem;
   --column: calc((100vw - 4 * var(--gutter)) / 3);
   font-size: 62.5%; }
 
@@ -10,7 +9,7 @@ body, p, a, .signup-hero__form *, h1, h2, h3, h4, h5, h6, q {
   font-style: normal; }
 
 body, p, a, .signup-hero__form * {
-  letter-spacing: var(--letter-spacing); }
+  letter-spacing: 0.01rem; }
 
 body {
   font-family: 'Inter', sans-serif;
@@ -70,8 +69,8 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 100%;
   box-sizing: border-box;
+  width: 100%;
   background-color: #F5F5F5;
   padding: 1rem var(--gutter);
   padding-bottom: 2rem;
@@ -164,8 +163,12 @@ footer {
         margin: 0; } }
 @media all and (min-width: 535px) {
   :root {
-    font-size: calc(100vw / 53.5); } }
+    --width-base: 535;
+    font-size: calc(100vw / calc(var(--width-base) / 10)); } }
 @media all and (min-width: 750px) {
+  :root {
+    --width-base: 750; }
+
   .signup-hero--mobile {
     display: none; }
 
