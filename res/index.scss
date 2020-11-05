@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6, q {
     @extend %text;
     font-family: 'Trispace', sans-serif;
     font-weight: 600;
-    margin: 0 0 1rem 0;
+    margin-bottom: 2rem;
 }
 
 h1 {
@@ -70,7 +70,11 @@ p, a {
 }
 
 p {
-    margin: 0 0 2rem 0;
+    margin-bottom: 2rem;
+
+    &:last-of-type {
+        margin-bottom: 4rem;
+    }
 }
 
 a {
@@ -112,9 +116,14 @@ a {
     width: 100%;
     box-sizing: border-box;
     background-color: $color-gray-off-white;
-    padding: (10px / $min-width) * 100% (20px / $min-width) * 100%;
+    padding: 1rem var(--gutter);
+    padding-bottom: 2rem;
     position: sticky;
     bottom: 0;
+
+    h3 {
+        margin-bottom: 1rem;
+    }
 
     &__form {
         display: flex;
@@ -233,27 +242,31 @@ footer {
 }
 
 @media all and (min-width: 400px) and (max-width: 749px) {
-    .signup-hero__form {
-        flex-direction: row;
-        justify-content: space-between;
+    .signup-hero {
+        padding-top: 2rem;
 
-        * {
-            height: 2.6em;
-        }
+        &__form {
+            flex-direction: row;
+            justify-content: space-between;
 
-        input[type="email"] {
-            width: calc(2 * var(--column) + var(--gutter));
-        }
+            * {
+                height: 2.6em;
+            }
 
-        button[type="submit"] {
-            width: var(--column);
-            margin: 0;
+            input[type="email"] {
+                width: calc(2 * var(--column) + var(--gutter));
+            }
+
+            button[type="submit"] {
+                width: var(--column);
+                margin: 0;
+            }
         }
     }
 }
 
 @media all and (min-width: 535px) {
-    body {
+    :root {
         font-size: calc(100vw / 53.5);
     }
 }
