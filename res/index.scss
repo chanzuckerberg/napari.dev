@@ -9,7 +9,9 @@ $max-width: 1050px;
 :root {
     --smallest-unit: 0.0716rem;
     --gutter: calc((20 / 300) * 100vw);
-    --column: calc((100vw - 4 * var(--gutter)) / 3);
+    --num-col: 3;
+    // (100vw - 4 * var(--gutter)) / 3
+    --column: calc(calc(100vw - calc(calc(var(--num-col) + 1) * var(--gutter))) / var(--num-col));
     font-size: 62.5%;  // normal 16px rem -> 10px
 }
 
@@ -274,6 +276,8 @@ footer {
 @media all and (min-width: 750px) {
     :root {
         --width-base: 750;
+        --gutter: calc((36 / 750) * 100vw);
+        --num-col: 5;
     }
 
     .signup-hero--mobile {
@@ -283,46 +287,41 @@ footer {
     .container {
         display: flex;
         flex-direction: row;
-    }
 
-    .container__content {
-        float: left;
-        flex: 3;
-        
-        main {
-            float: right;
-        }
-    }
-
-    .container__signup {
-        flex: 2;
-        height: 100vh;
-        position: sticky;
-        top: 0;
-        bottom: auto;
-        background: $color-gray-medium url(apps.svg) no-repeat 0 0; //replace bg image
-        display:flex; 
-        align-items:center;
-
-        .signup-hero {
-            width: 80%;
-            max-width: 300px;
-            margin-left: 50px;
-
-            &__sinker {
-                display: block;
+        &__content {
+            flex: 4;
+            
+            main {
+                float: right;
             }
+        }
 
-            &__form {
-                input[type="email"] {
-                    padding: 1.5rem 1.6rem;
-                    margin-bottom: 1.2rem;
+        &__signup {
+            flex: 3;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            bottom: auto;
+            background: $color-gray-medium url(apps.svg) no-repeat 0 0; //replace bg image
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+
+            .signup-hero {
+                min-width: 0;
+                width: calc(100% - 2 * var(--gutter));
+                padding: var(--gutter);
+
+                &__sinker {
+                    display: block;
                 }
-                button[type="submit"] {
-                    padding: 1.5rem;
-                    margin-bottom: 1.5rem;
-                }
-            }            
+
+                &__form {
+                    * {
+                        
+                    }
+                }            
+            }
         }
     }
 }

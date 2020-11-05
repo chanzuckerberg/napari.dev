@@ -1,7 +1,8 @@
 :root {
   --smallest-unit: 0.0716rem;
   --gutter: calc((20 / 300) * 100vw);
-  --column: calc((100vw - 4 * var(--gutter)) / 3);
+  --num-col: 3;
+  --column: calc(calc(100vw - calc(calc(var(--num-col) + 1) * var(--gutter))) / var(--num-col));
   font-size: 62.5%; }
 
 body, p, a, .signup-hero__form *, h1, h2, h3, h4, h5, h6, q {
@@ -167,7 +168,9 @@ footer {
     font-size: calc(100vw / calc(var(--width-base) / 10)); } }
 @media all and (min-width: 750px) {
   :root {
-    --width-base: 750; }
+    --width-base: 750;
+    --gutter: calc((36 / 750) * 100vw);
+    --num-col: 5; }
 
   .signup-hero--mobile {
     display: none; }
@@ -175,33 +178,25 @@ footer {
   .container {
     display: flex;
     flex-direction: row; }
-
-  .container__content {
-    float: left;
-    flex: 3; }
-    .container__content main {
-      float: right; }
-
-  .container__signup {
-    flex: 2;
-    height: 100vh;
-    position: sticky;
-    top: 0;
-    bottom: auto;
-    background: #9E9E9E url(apps.svg) no-repeat 0 0;
-    display: flex;
-    align-items: center; }
-    .container__signup .signup-hero {
-      width: 80%;
-      max-width: 300px;
-      margin-left: 50px; }
-      .container__signup .signup-hero__sinker {
-        display: block; }
-      .container__signup .signup-hero__form input[type="email"] {
-        padding: 1.5rem 1.6rem;
-        margin-bottom: 1.2rem; }
-      .container__signup .signup-hero__form button[type="submit"] {
-        padding: 1.5rem;
-        margin-bottom: 1.5rem; } }
+    .container__content {
+      flex: 4; }
+      .container__content main {
+        float: right; }
+    .container__signup {
+      flex: 3;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+      bottom: auto;
+      background: #9E9E9E url(apps.svg) no-repeat 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .container__signup .signup-hero {
+        min-width: 0;
+        width: calc(100% - 2 * var(--gutter));
+        padding: var(--gutter); }
+        .container__signup .signup-hero__sinker {
+          display: block; } }
 
 /*# sourceMappingURL=index.css.map */
