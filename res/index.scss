@@ -3,15 +3,25 @@ $color-white: #FFFFFF;
 $color-black: #000000;
 $color-gray-off-white: #F5F5F5;
 $color-gray-medium: #9E9E9E;
-$line-height: 1.5em;
 $min-width: 300px;
 $max-width: 1050px;
 
 :root {
     --smallest-unit: 0.0716rem;
     --gutter: calc((20 / 300) * 100vw);
+    --letter-spacing: 0.01rem;
     --column: calc((100vw - 4 * var(--gutter)) / 3);
     font-size: 62.5%;  // normal 16px rem -> 10px
+}
+
+%text {
+    line-height: 1.5em;
+    font-style: normal;
+}
+
+%text-spacing {
+    @extend %text;
+    letter-spacing: var(--letter-spacing);
 }
 
 // ====================
@@ -19,50 +29,44 @@ $max-width: 1050px;
 // ====================
 
 body {
+    @extend %text-spacing;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
-    letter-spacing: 0.01rem;
 }
 
 h1, h2, h3, h4, h5, h6, q {
+    @extend %text;
     font-family: 'Trispace', sans-serif;
-    font-style: normal;  
     font-weight: 600;
-    letter-spacing: 0.03rem; 
     margin: 0 0 1rem 0;
-    line-height: $line-height;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.5em;
 }
 
 h2 {
-    font-size: 1.7rem;
+    font-size: 1.7em;
 }
 
 h3 {
     font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.83em;
 }
 
 q {
     font-weight: 300;
-    font-size: 1.4rem;
-    line-height: $line-height;
+    font-size: 1.4em;
     quotes: '\00AB' '\00BB' '\201E' '\201C';
     display: block;
 }
 
 p, a {
+    @extend %text-spacing;
     font-family: 'Inter', sans-serif;
-    font-style: normal;
     font-weight: 400;
-    letter-spacing: 0.01rem;
-
-    font-size: 1rem;
-    line-height: $line-height;
+    font-size: 1em;
 }
 
 p {
@@ -97,7 +101,7 @@ a {
 }
 
 .header > p {
-    font-size: 1.2rem;
+    font-size: 1.2em;
 }
 
 .signup-hero {
@@ -118,10 +122,10 @@ a {
         width: 100%;
 
         * {
+            @extend %text-spacing;
             box-sizing: border-box;
-            font-size: 1rem;
-            line-height: $line-height;
-            height: 2rem;
+            font-size: 1em;
+            height: 2em;
             border-radius: var(--smallest-unit);
             padding: 0;
         }
@@ -129,7 +133,7 @@ a {
         input[type="email"] {
             color: $color-gray-medium;
             border: var(--smallest-unit) solid $color-gray-medium;
-            padding: 0.5rem;
+            padding: 0.5em;
         }
 
         button[type="submit"] {
@@ -211,7 +215,7 @@ footer {
 
     .learn-more {
         margin: 1.5rem 0;
-        font-size: 1.4rem;
+        font-size: 1.4em;
 
         p {
             margin-bottom: 0;
@@ -234,7 +238,7 @@ footer {
         justify-content: space-between;
 
         * {
-            height: 2.6rem;
+            height: 2.6em;
         }
 
         input[type="email"] {
@@ -249,8 +253,8 @@ footer {
 }
 
 @media all and (min-width: 535px) {
-    :root {
-        
+    body {
+        font-size: calc(100vw / 53.5);
     }
 }
 

@@ -1,47 +1,47 @@
 :root {
   --smallest-unit: 0.0716rem;
   --gutter: calc((20 / 300) * 100vw);
+  --letter-spacing: 0.01rem;
   --column: calc((100vw - 4 * var(--gutter)) / 3);
   font-size: 62.5%; }
+
+body, p, a, .signup-hero__form *, h1, h2, h3, h4, h5, h6, q {
+  line-height: 1.5em;
+  font-style: normal; }
+
+body, p, a, .signup-hero__form * {
+  letter-spacing: var(--letter-spacing); }
 
 body {
   font-family: 'Inter', sans-serif;
   font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0.01rem; }
+  font-weight: 400; }
 
 h1, h2, h3, h4, h5, h6, q {
   font-family: 'Trispace', sans-serif;
-  font-style: normal;
   font-weight: 600;
-  letter-spacing: 0.03rem;
-  margin: 0 0 1rem 0;
-  line-height: 1.5em; }
+  margin: 0 0 1rem 0; }
 
 h1 {
-  font-size: 2.5rem; }
+  font-size: 2.5em; }
 
 h2 {
-  font-size: 1.7rem; }
+  font-size: 1.7em; }
 
 h3 {
   font-family: 'Inter', sans-serif;
-  font-size: 0.8rem; }
+  font-size: 0.83em; }
 
 q {
   font-weight: 300;
-  font-size: 1.4rem;
-  line-height: 1.5em;
+  font-size: 1.4em;
   quotes: '\00AB' '\00BB' '\201E' '\201C';
   display: block; }
 
 p, a {
   font-family: 'Inter', sans-serif;
-  font-style: normal;
   font-weight: 400;
-  letter-spacing: 0.01rem;
-  font-size: 1rem;
-  line-height: 1.5em; }
+  font-size: 1em; }
 
 p {
   margin: 0 0 2rem 0; }
@@ -61,7 +61,7 @@ a {
     display: none; }
 
 .header > p {
-  font-size: 1.2rem; }
+  font-size: 1.2em; }
 
 .signup-hero {
   min-width: 300px;
@@ -80,15 +80,14 @@ a {
     width: 100%; }
     .signup-hero__form * {
       box-sizing: border-box;
-      font-size: 1rem;
-      line-height: 1.5em;
-      height: 2rem;
+      font-size: 1em;
+      height: 2em;
       border-radius: var(--smallest-unit);
       padding: 0; }
     .signup-hero__form input[type="email"] {
       color: #9E9E9E;
       border: var(--smallest-unit) solid #9E9E9E;
-      padding: 0.5rem; }
+      padding: 0.5em; }
     .signup-hero__form button[type="submit"] {
       background-color: #0286FF;
       border: none;
@@ -138,7 +137,7 @@ footer {
     font-weight: 600; }
 .quotes .learn-more {
   margin: 1.5rem 0;
-  font-size: 1.4rem; }
+  font-size: 1.4em; }
   .quotes .learn-more p {
     margin-bottom: 0; }
 
@@ -150,12 +149,15 @@ footer {
     flex-direction: row;
     justify-content: space-between; }
     .signup-hero__form * {
-      height: 2.6rem; }
+      height: 2.6em; }
     .signup-hero__form input[type="email"] {
       width: calc(2 * var(--column) + var(--gutter)); }
     .signup-hero__form button[type="submit"] {
       width: var(--column);
       margin: 0; } }
+@media all and (min-width: 535px) {
+  body {
+    font-size: calc(100vw / 53.5); } }
 @media all and (min-width: 750px) {
   .signup-hero--mobile {
     display: none; }
