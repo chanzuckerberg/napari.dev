@@ -1,8 +1,7 @@
 :root {
   --smallest-unit: 0.0716rem;
   --gutter: calc((20 / 300) * 100vw);
-  --num-col: 3;
-  --column: calc(calc(100vw - calc(calc(var(--num-col) + 1) * var(--gutter))) / var(--num-col));
+  --column: calc((100vw - 4 * var(--gutter)) / 3);
   font-size: 62.5%; }
 
 body, p, a, .signup-hero__form *, h1, h2, h3, h4, h5, h6, q {
@@ -34,8 +33,7 @@ h3 {
 
 q {
   font-weight: 300;
-  font-size: 1.4em;
-  quotes: '\00AB' '\00BB' '\201E' '\201C';
+  font-size: 1.4rem;
   display: block; }
 
 p, a {
@@ -99,8 +97,9 @@ a {
       color: #FFFFFF;
       text-align: center;
       margin-top: 0.5rem; }
-  .signup-hero__sinker {
-    display: none; }
+  .signup-hero q {
+    margin-top: 1.2rem;
+    margin-bottom: 0; }
 
 footer {
   width: 100%;
@@ -170,7 +169,7 @@ footer {
   :root {
     --width-base: 750;
     --gutter: calc((36 / 750) * 100vw);
-    --num-col: 5; }
+    --column: calc(3 * var(--gutter)); }
 
   .signup-hero--mobile {
     display: none; }
@@ -183,9 +182,12 @@ footer {
       .container__content main {
         float: right;
         margin-right: var(--gutter); }
+        .container__content main * {
+          max-width: calc(3 * var(--column) + var(--gutter)); }
     .container__signup {
       flex: 3;
       height: 100vh;
+      font-size: 1.5em;
       position: sticky;
       top: 0;
       bottom: auto;
@@ -199,7 +201,9 @@ footer {
         float: left;
         margin-left: var(--gutter); }
         .container__signup .signup-hero__sinker {
-          display: block; } }
+          display: block; }
+        .container__signup .signup-hero__form * {
+          height: var(--gutter); } }
 @media all and (min-width: 1050px) {
   :root {
     font-size: 87.5%;

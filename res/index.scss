@@ -9,9 +9,7 @@ $max-width: 1050px;
 :root {
     --smallest-unit: 0.0716rem;
     --gutter: calc((20 / 300) * 100vw);
-    --num-col: 3;
-    // (100vw - 4 * var(--gutter)) / 3
-    --column: calc(calc(100vw - calc(calc(var(--num-col) + 1) * var(--gutter))) / var(--num-col));
+    --column: calc((100vw - 4 * var(--gutter)) / 3);
     font-size: 62.5%;  // normal 16px rem -> 10px
 }
 
@@ -58,8 +56,7 @@ h3 {
 
 q {
     font-weight: 300;
-    font-size: 1.4em;
-    quotes: '\00AB' '\00BB' '\201E' '\201C';
+    font-size: 1.4rem;
     display: block;
 }
 
@@ -155,8 +152,9 @@ a {
         }
     }
 
-    &__sinker {
-        display: none;
+    q {
+        margin-top: 1.2rem;
+        margin-bottom: 0;
     }
 }
 
@@ -277,7 +275,7 @@ footer {
     :root {
         --width-base: 750;
         --gutter: calc((36 / 750) * 100vw);
-        --num-col: 5;
+        --column: calc(3 * var(--gutter));
     }
 
     .signup-hero--mobile {
@@ -294,12 +292,17 @@ footer {
             main {
                 float: right;
                 margin-right: var(--gutter);
+
+                * {
+                    max-width: calc(3 * var(--column) + var(--gutter));
+                }
             }
         }
 
         &__signup {
             flex: 3;
             height: 100vh;
+            font-size: 1.5em;
             position: sticky;
             top: 0;
             bottom: auto;
@@ -320,7 +323,7 @@ footer {
 
                 &__form {
                     * {
-                        
+                        height: var(--gutter);
                     }
                 }            
             }
