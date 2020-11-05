@@ -181,7 +181,8 @@ footer {
     .container__content {
       flex: 4; }
       .container__content main {
-        float: right; }
+        float: right;
+        margin-right: var(--gutter); }
     .container__signup {
       flex: 3;
       height: 100vh;
@@ -190,13 +191,19 @@ footer {
       bottom: auto;
       background: #9E9E9E url(apps.svg) no-repeat 0 0;
       display: flex;
-      align-items: center;
-      justify-content: center; }
+      align-items: center; }
       .container__signup .signup-hero {
         min-width: 0;
-        width: calc(100% - 2 * var(--gutter));
-        padding: var(--gutter); }
+        width: calc(2 * var(--column) + var(--gutter));
+        padding: var(--gutter);
+        float: left;
+        margin-left: var(--gutter); }
         .container__signup .signup-hero__sinker {
           display: block; } }
+@media all and (min-width: 1050px) {
+  :root {
+    font-size: 87.5%;
+    --gutter: calc((50 / 14) * 1rem);
+    --column: calc((150 / 14) * 1rem); } }
 
 /*# sourceMappingURL=index.css.map */

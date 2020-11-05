@@ -293,6 +293,7 @@ footer {
             
             main {
                 float: right;
+                margin-right: var(--gutter);
             }
         }
 
@@ -305,12 +306,13 @@ footer {
             background: $color-gray-medium url(apps.svg) no-repeat 0 0; //replace bg image
             display: flex; 
             align-items: center;
-            justify-content: center;
 
             .signup-hero {
                 min-width: 0;
-                width: calc(100% - 2 * var(--gutter));
+                width: calc(2 * var(--column) + var(--gutter));
                 padding: var(--gutter);
+                float: left;
+                margin-left: var(--gutter);
 
                 &__sinker {
                     display: block;
@@ -323,5 +325,14 @@ footer {
                 }            
             }
         }
+    }
+}
+
+@media all and (min-width: 1050px) {
+    :root {
+        // effective root font size: 16 * 0.875 -> 14
+        font-size: (1050 / 750) * 62.5%;
+        --gutter: calc((50 / 14) * 1rem);
+        --column: calc((150 / 14) * 1rem);
     }
 }
