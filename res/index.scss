@@ -4,7 +4,6 @@ $color-black: #000000;
 $color-gray-off-white: #F5F5F5;
 $color-gray-medium: #9E9E9E;
 $min-width: 300px;
-$max-width: 1050px;
 
 :root {
     --smallest-unit: 0.0716rem;
@@ -304,14 +303,31 @@ footer {
 
         &__content {
             flex: 4;
+
+            %align-right {
+                margin-right: var(--gutter);
+                width: calc(3 * var(--column) + var(--gutter));
+            }
+
+            .header {
+
+                &__tagline {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    padding-right: 0;
+                }
+
+                h1, p {
+                    @extend %align-right;
+                    float: right;
+                    padding-right: 0;
+                }
+            }
             
             .sellers {
+                @extend %align-right;
                 float: right;
-                margin-right: var(--gutter);
-
-                * {
-                    max-width: calc(3 * var(--column) + var(--gutter));
-                }
+                padding: 0;
             }
         }
 

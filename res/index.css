@@ -190,11 +190,19 @@ footer {
     flex-direction: row; }
     .container__content {
       flex: 4; }
+      .container__content .header h1, .container__content .header p, .container__content .sellers {
+        margin-right: var(--gutter);
+        width: calc(3 * var(--column) + var(--gutter)); }
+      .container__content .header__tagline {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-right: 0; }
+      .container__content .header h1, .container__content .header p {
+        float: right;
+        padding-right: 0; }
       .container__content .sellers {
         float: right;
-        margin-right: var(--gutter); }
-        .container__content .sellers * {
-          max-width: calc(3 * var(--column) + var(--gutter)); }
+        padding: 0; }
     .container__signup {
       flex: 3;
       height: 100vh;
