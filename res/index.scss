@@ -25,8 +25,7 @@ $min-width: 300px;
 %image-background-darkened {
     background: linear-gradient(rgba($color-black, 0.35),
                                 rgba($color-black, 0.35)),
-                url('bkg.jpg')
-                no-repeat;
+                url('bkg.jpg');
     background-size: 100%;
 }
 
@@ -354,7 +353,7 @@ footer {
             position: sticky;
             top: 0;
             bottom: auto;
-            background: url('bkg.jpg') no-repeat;
+            background: url('bkg.jpg');
             background-size: auto 135%;
             background-position-x: right 25%;
             display: flex; 

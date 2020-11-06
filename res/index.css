@@ -12,7 +12,7 @@ body, p, a, .signup-hero__form * {
   letter-spacing: 0.01rem; }
 
 .signup-hero, footer {
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("bkg.jpg") no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("bkg.jpg");
   background-size: 100%; }
 
 body {
@@ -219,7 +219,7 @@ footer {
       position: sticky;
       top: 0;
       bottom: auto;
-      background: url("bkg.jpg") no-repeat;
+      background: url("bkg.jpg");
       background-size: auto 135%;
       background-position-x: right 25%;
       display: flex;
