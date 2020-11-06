@@ -326,15 +326,19 @@ footer {
             }
 
             .header {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
                 &__tagline {
                     display: flex;
-                    flex-direction: row-reverse;
+                    justify-content: right;
                     padding-right: 0;
+                    width: 100%;
                 }
 
                 h1, p {
                     @extend %align-right;
-                    float: right;
                     padding-right: 0;
                 }
             }

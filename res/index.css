@@ -202,13 +202,17 @@ footer {
       .container__content .header h1, .container__content .header p, .container__content .sellers {
         margin-right: var(--gutter);
         width: calc(3 * var(--column) + var(--gutter)); }
-      .container__content .header__tagline {
+      .container__content .header {
         display: flex;
-        flex-direction: row-reverse;
-        padding-right: 0; }
-      .container__content .header h1, .container__content .header p {
-        float: right;
-        padding-right: 0; }
+        flex-direction: column;
+        align-items: flex-end; }
+        .container__content .header__tagline {
+          display: flex;
+          justify-content: right;
+          padding-right: 0;
+          width: 100%; }
+        .container__content .header h1, .container__content .header p {
+          padding-right: 0; }
       .container__content .sellers {
         float: right;
         padding: 0; }
