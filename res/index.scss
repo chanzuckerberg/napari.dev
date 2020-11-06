@@ -22,6 +22,14 @@ $min-width: 300px;
     letter-spacing: 0.01rem;
 }
 
+%image-background-darkened {
+    background: linear-gradient(rgba($color-black, 0.35),
+                                rgba($color-black, 0.35)),
+                url('bkg.jpg')
+                no-repeat;
+    background-size: 100%;
+}
+
 // ====================
 //        FONTS
 // ====================
@@ -125,13 +133,15 @@ a {
     min-width: $min-width;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     box-sizing: border-box;
     width: 100%;
-    background-color: $color-gray-off-white;
+    @extend %image-background-darkened;
+    background-position-y: -50%;
+    color: $color-white;
     padding: 1rem var(--gutter);
     padding-bottom: 2rem;
     position: sticky;
+    height: 9.3rem;
     bottom: 0;
 
     h3 {
@@ -141,6 +151,7 @@ a {
     &__form {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         width: 100%;
 
         * {
@@ -176,9 +187,11 @@ a {
 footer {
     width: 100%;
     min-width: $min-width;
-    background-color: $color-primary-light;
+    @extend %image-background-darkened;
+    background-position-y: 50%;
     box-sizing: border-box;
     padding: 2rem 4rem;
+    height: 9.3rem;
 
     ul > li {
         display: inline;
@@ -314,7 +327,6 @@ footer {
             }
 
             .header {
-
                 &__tagline {
                     display: flex;
                     flex-direction: row-reverse;
@@ -342,7 +354,9 @@ footer {
             position: sticky;
             top: 0;
             bottom: auto;
-            background: $color-gray-medium url(apps.svg) no-repeat 0 0; //replace bg image
+            background: url('bkg.jpg') no-repeat;
+            background-size: auto 135%;
+            background-position-x: right 25%;
             display: flex; 
             align-items: center;
 
@@ -352,6 +366,8 @@ footer {
                 padding: var(--gutter);
                 float: left;
                 margin-left: var(--gutter);
+                background: rgba($color-black, 0.75);
+                height: auto;
 
                 &__sinker {
                     display: block;

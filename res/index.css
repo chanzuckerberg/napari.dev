@@ -11,6 +11,10 @@ body, p, a, .signup-hero__form *, h1, h2, h3, h4, h5, h6, q {
 body, p, a, .signup-hero__form * {
   letter-spacing: 0.01rem; }
 
+.signup-hero, footer {
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("bkg.jpg") no-repeat;
+  background-size: 100%; }
+
 body {
   font-family: 'Inter', sans-serif;
   font-style: normal;
@@ -78,19 +82,21 @@ a {
   min-width: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   box-sizing: border-box;
   width: 100%;
-  background-color: #F5F5F5;
+  background-position-y: -50%;
+  color: #FFFFFF;
   padding: 1rem var(--gutter);
   padding-bottom: 2rem;
   position: sticky;
+  height: 9.3rem;
   bottom: 0; }
   .signup-hero h3 {
     margin-bottom: 1rem; }
   .signup-hero__form {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 100%; }
     .signup-hero__form * {
       box-sizing: border-box;
@@ -115,9 +121,10 @@ a {
 footer {
   width: 100%;
   min-width: 300px;
-  background-color: #0286FF;
+  background-position-y: 50%;
   box-sizing: border-box;
-  padding: 2rem 4rem; }
+  padding: 2rem 4rem;
+  height: 9.3rem; }
   footer ul > li {
     display: inline;
     margin: 0 3rem 0 0; }
@@ -212,7 +219,9 @@ footer {
       position: sticky;
       top: 0;
       bottom: auto;
-      background: #9E9E9E url(apps.svg) no-repeat 0 0;
+      background: url("bkg.jpg") no-repeat;
+      background-size: auto 135%;
+      background-position-x: right 25%;
       display: flex;
       align-items: center; }
       .container__signup .signup-hero {
@@ -220,7 +229,9 @@ footer {
         width: calc(2 * var(--column) + var(--gutter));
         padding: var(--gutter);
         float: left;
-        margin-left: var(--gutter); }
+        margin-left: var(--gutter);
+        background: rgba(0, 0, 0, 0.75);
+        height: auto; }
         .container__signup .signup-hero__sinker {
           display: block; }
         .container__signup .signup-hero__form * {
