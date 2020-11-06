@@ -124,9 +124,8 @@ footer {
   background-position-y: 50%;
   box-sizing: border-box;
   height: 9.3rem;
-  font-weight: 700;
-  font-size: 0.83em;
-  padding: 2rem var(--gutter); }
+  padding: 2rem var(--gutter);
+  position: relative; }
   footer .footer-content {
     display: flex;
     flex-direction: row;
@@ -137,6 +136,8 @@ footer {
       footer .footer-content ul > li:not(:first-child) {
         margin-left: 1rem; }
       footer .footer-content ul > li a {
+        font-weight: 700;
+        font-size: 0.83em;
         color: #FFFFFF; }
     footer .footer-content .logos a {
       display: inline-block;
@@ -148,6 +149,14 @@ footer {
       footer .footer-content .logos a img {
         width: 3rem;
         height: 3rem; }
+  footer p {
+    color: #FFFFFF;
+    font-size: 0.6em;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem; }
+    footer p:last-of-type {
+      margin-bottom: 0; }
 
 .features .feature {
   margin: 0 0 2rem 0; }

@@ -190,9 +190,8 @@ footer {
     background-position-y: 50%;
     box-sizing: border-box;
     height: 9.3rem;
-    font-weight: 700;
-    font-size: 0.83em;
     padding: 2rem var(--gutter);
+    position: relative;
 
     .footer-content {
         display: flex;
@@ -208,6 +207,8 @@ footer {
             }
     
             a {
+                font-weight: 700;
+                font-size: 0.83em;
                 color: $color-white;
             }
         }
@@ -231,9 +232,20 @@ footer {
                 }
             }
         }
+
     }
 
-    
+    p {
+        color: $color-white;
+        font-size: 0.6em;
+        position: absolute;
+        bottom: 0.5rem;
+        right: 1rem;
+        
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
 }
 
 .features {
