@@ -189,17 +189,51 @@ footer {
     @extend %image-background-darkened;
     background-position-y: 50%;
     box-sizing: border-box;
-    padding: 2rem 4rem;
     height: 9.3rem;
+    font-weight: 700;
+    font-size: 0.83em;
+    padding: 2rem var(--gutter);
 
-    ul > li {
-        display: inline;
-        margin: 0 3rem 0 0;
+    .footer-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
 
-        a {
-            color: $color-white;
+        ul > li {
+            display: inline;
+    
+            &:not(:first-child) {
+                margin-left: 1rem;
+            }
+    
+            a {
+                color: $color-white;
+            }
+        }
+    
+        .logos {
+            a {
+                // make height same size as imgs
+                display: inline-block;
+                line-height: 0;
+
+                // vertical divider
+                &:first-child {
+                    padding-right: 1rem;
+                    margin-right: 1rem;
+                    border-right: 0.1rem solid $color-white;
+                }
+
+                img {
+                    width: 3rem;
+                    height: 3rem;
+                }
+            }
         }
     }
+
+    
 }
 
 .features {
@@ -235,6 +269,7 @@ footer {
             width: 1rem;
             height: 1rem;
         }
+
         &:first-child {
             border-top: var(--smallest-unit) solid $color-black;
         }
