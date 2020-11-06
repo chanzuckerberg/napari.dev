@@ -55,13 +55,24 @@ a {
   .container__content {
     width: 100%;
     min-width: 300px; }
-    .container__content main {
-      padding: var(--gutter); }
   .container__signup {
     display: none; }
 
-.header > p {
-  font-size: 1.2em; }
+.header {
+  width: 100%; }
+  .header__tagline {
+    padding: var(--gutter);
+    background-color: #000000;
+    color: #FFFFFF;
+    margin-bottom: 1.6rem; }
+    .header__tagline h1 {
+      margin: 0; }
+  .header p {
+    padding: 0 var(--gutter);
+    font-size: 1.2em; }
+
+.sellers {
+  padding: 0 var(--gutter); }
 
 .signup-hero {
   min-width: 300px;
@@ -179,10 +190,10 @@ footer {
     flex-direction: row; }
     .container__content {
       flex: 4; }
-      .container__content main {
+      .container__content .sellers {
         float: right;
         margin-right: var(--gutter); }
-        .container__content main * {
+        .container__content .sellers * {
           max-width: calc(3 * var(--column) + var(--gutter)); }
     .container__signup {
       flex: 3;
