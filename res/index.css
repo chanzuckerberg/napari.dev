@@ -153,8 +153,10 @@ footer {
 .quotes .learn-more {
   margin: 1.5rem 0;
   font-size: 1.4em; }
+  .quotes .learn-more ul {
+    margin-bottom: var(--gutter); }
   .quotes .learn-more p {
-    margin-bottom: 0; }
+    margin-bottom: 1rem; }
 
 @media all and (max-width: 299px) {
   :root {

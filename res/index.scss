@@ -240,8 +240,12 @@ footer {
         margin: 1.5rem 0;
         font-size: 1.4em;
 
+        ul {
+            margin-bottom: var(--gutter);
+        }
+
         p {
-            margin-bottom: 0;
+            margin-bottom: 1rem;
         }
     }
 }
