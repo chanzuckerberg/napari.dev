@@ -40,11 +40,14 @@ body {
     font-weight: 400;
 }
 
-h1, h2, h3, h4, h5, h6, q {
+h1, h2, h3, h4, q {
+    margin-bottom: 1.6rem;
+}
+
+h1, h2, q {
     @extend %text;
     font-family: 'Trispace', sans-serif;
     font-weight: 600;
-    margin-bottom: 2rem;
 }
 
 h1 {
@@ -56,8 +59,11 @@ h2 {
 }
 
 h3 {
-    font-family: 'Inter', sans-serif;
     font-size: 0.83em;
+}
+
+h4 {
+    font-size: 1.4em;
 }
 
 q {
@@ -248,66 +254,57 @@ footer {
     }
 }
 
-.features {
-    .feature {
-        margin: 0 0 2rem 0;
+.feature {
+    &__icon {
+        width: var(--column);
+        height: var(--column);
+        // remove below when real content added
+        content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><path d="M0,0h1v1H0" fill="%23C4C4C4"/></svg>');
+        margin-bottom: 1.3rem;
+    }
+}
 
-        &__icon {
-            width: var(--column);
-            height: var(--column);
-            // remove below when real content added
-            content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><path d="M0,0h1v1H0" fill="%23C4C4C4"/></svg>');
-        }
+.quote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: var(--smallest-unit) solid $color-black;
 
-        p {
-            margin: 0;
+    &__icon, &__text {
+        margin-top: 1rem;
+    }
+
+    &__icon {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    &:first-child {
+        border-top: var(--smallest-unit) solid $color-black;
+    }
+
+    q {
+        margin-bottom: 1.0rem;
+    }
+
+    p {
+        font-weight: 600;
+    }
+}
+
+.learn-more {
+    margin-top: 3.5rem;
+
+    ul {
+        margin-bottom: var(--gutter);
+        
+        a {
+            font-size: 1.4em;
         }
     }
 }
 
-.quotes {
-    .quote {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border-bottom: var(--smallest-unit) solid $color-black;
-
-        &__icon, &__text {
-            margin-top: 1rem;
-        }
-
-        &__icon {
-            width: 1rem;
-            height: 1rem;
-        }
-
-        &:first-child {
-            border-top: var(--smallest-unit) solid $color-black;
-        }
-
-        q {
-            margin-bottom: 1.0rem;
-        }
-
-        p {
-            font-weight: 600;
-        }
-    }
-
-    .learn-more {
-        margin: 1.5rem 0;
-        font-size: 1.4em;
-
-        ul {
-            margin-bottom: var(--gutter);
-        }
-
-        p {
-            margin-bottom: 1rem;
-        }
-    }
-}
 
 // ====================
 //    MEDIA QUERIES
@@ -339,6 +336,10 @@ footer {
                 margin: 0;
             }
         }
+    }
+
+    .feature__icon {
+        margin-bottom: 1.5rem;
     }
 }
 

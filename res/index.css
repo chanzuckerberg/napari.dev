@@ -4,7 +4,7 @@
   --column: calc((100vw - 4 * var(--gutter)) / 3);
   font-size: 62.5%; }
 
-body, p, a, .signup-hero__form *, h1, h2, h3, h4, h5, h6, q {
+body, p, a, .signup-hero__form *, h1, h2, q {
   line-height: 1.5em;
   font-style: normal; }
 
@@ -20,10 +20,12 @@ body {
   font-style: normal;
   font-weight: 400; }
 
-h1, h2, h3, h4, h5, h6, q {
+h1, h2, h3, h4, q {
+  margin-bottom: 1.6rem; }
+
+h1, h2, q {
   font-family: 'Trispace', sans-serif;
-  font-weight: 600;
-  margin-bottom: 2rem; }
+  font-weight: 600; }
 
 h1 {
   font-size: 2.5em; }
@@ -32,8 +34,10 @@ h2 {
   font-size: 1.7em; }
 
 h3 {
-  font-family: 'Inter', sans-serif;
   font-size: 0.83em; }
+
+h4 {
+  font-size: 1.4em; }
 
 q {
   font-weight: 300;
@@ -158,39 +162,36 @@ footer {
     footer p:last-of-type {
       margin-bottom: 0; }
 
-.features .feature {
-  margin: 0 0 2rem 0; }
-  .features .feature__icon {
-    width: var(--column);
-    height: var(--column);
-    content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><path d="M0,0h1v1H0" fill="%23C4C4C4"/></svg>'); }
-  .features .feature p {
-    margin: 0; }
+.feature__icon {
+  width: var(--column);
+  height: var(--column);
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><path d="M0,0h1v1H0" fill="%23C4C4C4"/></svg>');
+  margin-bottom: 1.3rem; }
 
-.quotes .quote {
+.quote {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-bottom: var(--smallest-unit) solid #000000; }
-  .quotes .quote__icon, .quotes .quote__text {
+  .quote__icon, .quote__text {
     margin-top: 1rem; }
-  .quotes .quote__icon {
+  .quote__icon {
     width: 1rem;
     height: 1rem; }
-  .quotes .quote:first-child {
+  .quote:first-child {
     border-top: var(--smallest-unit) solid #000000; }
-  .quotes .quote q {
+  .quote q {
     margin-bottom: 1.0rem; }
-  .quotes .quote p {
+  .quote p {
     font-weight: 600; }
-.quotes .learn-more {
-  margin: 1.5rem 0;
-  font-size: 1.4em; }
-  .quotes .learn-more ul {
+
+.learn-more {
+  margin-top: 3.5rem; }
+  .learn-more ul {
     margin-bottom: var(--gutter); }
-  .quotes .learn-more p {
-    margin-bottom: 1rem; }
+    .learn-more ul a {
+      font-size: 1.4em; }
 
 @media all and (max-width: 299px) {
   :root {
@@ -207,7 +208,10 @@ footer {
         width: calc(2 * var(--column) + var(--gutter)); }
       .signup-hero__form button[type="submit"] {
         width: var(--column);
-        margin: 0; } }
+        margin: 0; }
+
+  .feature__icon {
+    margin-bottom: 1.5rem; } }
 @media all and (min-width: 535px) {
   :root {
     --width-base: 535;
