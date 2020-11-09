@@ -3,10 +3,10 @@ $color-white: #FFFFFF;
 $color-black: #000000;
 $color-gray-off-white: #F5F5F5;
 $color-gray-medium: #9E9E9E;
+$smallest-unit: 1px;
 $min-width: 300px;
 
 :root {
-    --smallest-unit: 0.0716rem;
     --gutter: calc((20 / 300) * 100vw);
     --column: calc((100vw - 4 * var(--gutter)) / 3);
     font-size: 62.5%;  // normal 16px rem -> 10px
@@ -164,13 +164,13 @@ a {
             box-sizing: border-box;
             font-size: 1em;
             height: 2em;
-            border-radius: var(--smallest-unit);
+            border-radius: $smallest-unit;
             padding: 0;
         }
 
         input[type="email"] {
             color: $color-gray-medium;
-            border: var(--smallest-unit) solid $color-gray-medium;
+            border: $smallest-unit solid $color-gray-medium;
             padding: 0.5em;
         }
 
@@ -269,7 +269,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-bottom: var(--smallest-unit) solid $color-black;
+    border-bottom: $smallest-unit solid $color-black;
 
     &__icon, &__text {
         margin-top: 1rem;
@@ -281,7 +281,7 @@ footer {
     }
 
     &:first-child {
-        border-top: var(--smallest-unit) solid $color-black;
+        border-top: $smallest-unit solid $color-black;
     }
 
     q {
@@ -395,6 +395,10 @@ footer {
                 @extend %align-right;
                 float: right;
                 padding: 0;
+
+                .feature__icon {
+                    margin-bottom: 1.6rem;
+                }
             }
         }
 
