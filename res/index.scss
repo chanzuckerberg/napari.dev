@@ -388,7 +388,7 @@ footer {
 
                 &__tagline {
                     display: flex;
-                    justify-content: right;
+                    justify-content: flex-end;
                     padding-right: 0;
                     width: 100%;
                 }
@@ -419,7 +419,7 @@ footer {
             bottom: auto;
             background: url('bkg.jpg');
             background-size: auto 135%;
-            background-position-x: right 25%;
+            background-position: top 0% right 25%;
             display: flex; 
             align-items: center;
 
