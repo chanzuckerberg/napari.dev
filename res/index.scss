@@ -3,13 +3,26 @@ $color-white: #FFFFFF;
 $color-black: #000000;
 $color-gray-off-white: #F5F5F5;
 $color-gray-medium: #9E9E9E;
-$smallest-unit: 1px;
+
 $min-width: 300px;
+$email-unstacks: 350px;
+$text-grows: 535px;
+$wide-screen: 750px;
+$max-width: 1050px;
+
+$smallest-unit: 1px;
+
+$default-font-size: 16px;
+$min-font-size: 10px;
+$max-font-size: 14px;
+$min-font-size-multiplier: ($min-font-size / $default-font-size) * 100%;
+$max-font-size-multiplier: ($max-width / $wide-screen) * $min-font-size-multiplier;
+
 
 :root {
-    --gutter: calc((20 / 300) * 100vw);
+    --gutter: #{(20px / $min-width) * 100vw};
     --column: calc((100vw - 4 * var(--gutter)) / 3);
-    font-size: 62.5%;  // normal 16px rem -> 10px
+    font-size: $min-font-size-multiplier;
 }
 
 %text {
@@ -38,9 +51,10 @@ body {
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 400;
+    color: $color-black;
 }
 
-h1, h2, h3, h4, q {
+h1, h2, h3, h4 {
     margin-bottom: 1.6rem;
 }
 
@@ -70,13 +84,7 @@ q {
     font-weight: 300;
     font-size: 1.4rem;
     display: block;
-}
-
-p, a {
-    @extend %text-spacing;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 1em;
+    margin-bottom: 1rem;
 }
 
 p {
@@ -90,6 +98,12 @@ p {
 a {
     color: $color-primary-light;
     text-decoration: none;
+
+    &.has-image {
+        // make height same size as imgs
+        display: inline-block;
+        line-height: 0;
+    }
 }
 
 
@@ -221,10 +235,6 @@ footer {
     
         .logos {
             a {
-                // make height same size as imgs
-                display: inline-block;
-                line-height: 0;
-
                 // vertical divider
                 &:first-child {
                     padding-right: 1rem;
@@ -258,8 +268,6 @@ footer {
     &__icon {
         width: var(--column);
         height: var(--column);
-        // remove below when real content added
-        content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><path d="M0,0h1v1H0" fill="%23C4C4C4"/></svg>');
         margin-bottom: 1.3rem;
     }
 }
@@ -267,25 +275,24 @@ footer {
 .quote {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     border-bottom: $smallest-unit solid $color-black;
-
-    &__icon, &__text {
-        margin-top: 1rem;
-    }
-
-    &__icon {
-        width: 1rem;
-        height: 1rem;
-    }
 
     &:first-child {
         border-top: $smallest-unit solid $color-black;
     }
 
     q {
-        margin-bottom: 1.0rem;
+        margin-top: 2rem;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 4rem;
+            height: 4rem;
+            background: url("twitter-logo.svg") no-repeat;
+            fill: $color-primary-light;
+            margin-bottom: 1rem;
+        }
     }
 
     p {
@@ -309,13 +316,14 @@ footer {
 // ====================
 //    MEDIA QUERIES
 // ====================
-@media all and (max-width: 299px) {
+
+@media all and (max-width: $min-width - 1px) {
     :root {
         --gutter: 2rem;
     }
 }
 
-@media all and (min-width: 400px) and (max-width: 749px) {
+@media all and (min-width: $email-unstacks) and (max-width: $wide-screen - 1px) {
     .signup-hero {
         padding-top: 2rem;
 
@@ -343,17 +351,17 @@ footer {
     }
 }
 
-@media all and (min-width: 535px) {
+@media all and (min-width: $text-grows) {
     :root {
-        --width-base: 535;
-        font-size: calc(100vw / calc(var(--width-base) / 10));
+        --width-base: #{$text-grows / 1px};
+        font-size: calc(100vw / (var(--width-base) / 10));
     }
 }
 
-@media all and (min-width: 750px) {
+@media all and (min-width: $wide-screen) {
     :root {
-        --width-base: 750;
-        --gutter: calc((36 / 750) * 100vw);
+        --width-base: #{$wide-screen / 1px};
+        --gutter: #{(36px / $wide-screen) * 100vw};
         --column: calc(3 * var(--gutter));
     }
 
@@ -438,11 +446,9 @@ footer {
     }
 }
 
-@media all and (min-width: 1050px) {
+@media all and (min-width: $max-width) {
     :root {
-        // effective root font size: 16 * 0.875 -> 14
-        font-size: (1050 / 750) * 62.5%;
-        --gutter: calc((50 / 14) * 1rem);
-        --column: calc((150 / 14) * 1rem);
+        font-size: $max-font-size-multiplier;
+        --gutter: #{(50px / $max-font-size) * 1rem};
     }
 }

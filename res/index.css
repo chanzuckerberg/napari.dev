@@ -1,13 +1,13 @@
 :root {
-  --gutter: calc((20 / 300) * 100vw);
+  --gutter: 6.6666666667vw;
   --column: calc((100vw - 4 * var(--gutter)) / 3);
   font-size: 62.5%; }
 
-body, p, a, .signup-hero__form *, h1, h2, q {
+body, .signup-hero__form *, h1, h2, q {
   line-height: 1.5em;
   font-style: normal; }
 
-body, p, a, .signup-hero__form * {
+body, .signup-hero__form * {
   letter-spacing: 0.01rem; }
 
 .signup-hero, footer {
@@ -17,9 +17,10 @@ body, p, a, .signup-hero__form * {
 body {
   font-family: 'Inter', sans-serif;
   font-style: normal;
-  font-weight: 400; }
+  font-weight: 400;
+  color: #000000; }
 
-h1, h2, h3, h4, q {
+h1, h2, h3, h4 {
   margin-bottom: 1.6rem; }
 
 h1, h2, q {
@@ -41,12 +42,8 @@ h4 {
 q {
   font-weight: 300;
   font-size: 1.4rem;
-  display: block; }
-
-p, a {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 1em; }
+  display: block;
+  margin-bottom: 1rem; }
 
 p {
   margin-bottom: 2rem; }
@@ -56,6 +53,9 @@ p {
 a {
   color: #0286FF;
   text-decoration: none; }
+  a.has-image {
+    display: inline-block;
+    line-height: 0; }
 
 .container {
   min-width: 300px; }
@@ -142,16 +142,13 @@ footer {
         font-weight: 700;
         font-size: 0.83em;
         color: #FFFFFF; }
-    footer .footer-content .logos a {
-      display: inline-block;
-      line-height: 0; }
-      footer .footer-content .logos a:first-child {
-        padding-right: 1rem;
-        margin-right: 1rem;
-        border-right: 0.1rem solid #FFFFFF; }
-      footer .footer-content .logos a img {
-        width: 3rem;
-        height: 3rem; }
+    footer .footer-content .logos a:first-child {
+      padding-right: 1rem;
+      margin-right: 1rem;
+      border-right: 0.1rem solid #FFFFFF; }
+    footer .footer-content .logos a img {
+      width: 3rem;
+      height: 3rem; }
   footer p {
     color: #FFFFFF;
     font-size: 0.6em;
@@ -164,24 +161,24 @@ footer {
 .feature__icon {
   width: var(--column);
   height: var(--column);
-  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><path d="M0,0h1v1H0" fill="%23C4C4C4"/></svg>');
   margin-bottom: 1.3rem; }
 
 .quote {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   border-bottom: 1px solid #000000; }
-  .quote__icon, .quote__text {
-    margin-top: 1rem; }
-  .quote__icon {
-    width: 1rem;
-    height: 1rem; }
   .quote:first-child {
     border-top: 1px solid #000000; }
   .quote q {
-    margin-bottom: 1.0rem; }
+    margin-top: 2rem; }
+    .quote q::before {
+      content: "";
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      background: url("twitter-logo.svg") no-repeat;
+      fill: #0286FF;
+      margin-bottom: 1rem; }
   .quote p {
     font-weight: 600; }
 
@@ -195,7 +192,7 @@ footer {
 @media all and (max-width: 299px) {
   :root {
     --gutter: 2rem; } }
-@media all and (min-width: 400px) and (max-width: 749px) {
+@media all and (min-width: 350px) and (max-width: 749px) {
   .signup-hero {
     padding-top: 2rem; }
     .signup-hero__form {
@@ -214,11 +211,11 @@ footer {
 @media all and (min-width: 535px) {
   :root {
     --width-base: 535;
-    font-size: calc(100vw / calc(var(--width-base) / 10)); } }
+    font-size: calc(100vw / (var(--width-base) / 10)); } }
 @media all and (min-width: 750px) {
   :root {
     --width-base: 750;
-    --gutter: calc((36 / 750) * 100vw);
+    --gutter: 4.8vw;
     --column: calc(3 * var(--gutter)); }
 
   .signup-hero--mobile {
@@ -275,7 +272,6 @@ footer {
 @media all and (min-width: 1050px) {
   :root {
     font-size: 87.5%;
-    --gutter: calc((50 / 14) * 1rem);
-    --column: calc((150 / 14) * 1rem); } }
+    --gutter: 3.5714285714rem; } }
 
 /*# sourceMappingURL=index.css.map */
