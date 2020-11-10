@@ -1,0 +1,43 @@
+{
+  "name": "napari.dev",
+  "version": "1.0.0",
+  "description": "To get a local version running, [install npm](https://www.npmjs.com/get-npm), then install `http-server` with ```bash npm install --global live-server sass ```",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass --watch res/index.scss:res/index.css & live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chanzuckerberg/napari.dev.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chanzuckerberg/napari.dev/issues"
+  },
+  "homepage": "https://github.com/chanzuckerberg/napari.dev#readme",
+  "devDependencies": {
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
+    "live-server": "^1.2.1",
+    "prettier": "2.1.2",
+    "stylelint": "^13.7.2",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.18.0"
+  },
+  "dependencies": {
+    "sass": "^1.29.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.scss": "stylelint --fix",
+    "*.{js,scss,md}": "prettier --write"
+  }
+}
