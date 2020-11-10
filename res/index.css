@@ -142,13 +142,14 @@ footer {
         font-weight: 700;
         font-size: 0.83em;
         color: #FFFFFF; }
-    footer .footer-content .logos a:first-child {
-      padding-right: 1rem;
-      margin-right: 1rem;
-      border-right: 0.1rem solid #FFFFFF; }
-    footer .footer-content .logos a img {
-      width: 3rem;
-      height: 3rem; }
+    footer .footer-content .logos {
+      display: flex; }
+      footer .footer-content .logos a > img {
+        width: 3rem;
+        height: 3rem; }
+      footer .footer-content .logos .vertical-line {
+        margin: 0 1rem;
+        border-right: 1px solid #FFFFFF; }
   footer p {
     color: #FFFFFF;
     font-size: 0.6em;
