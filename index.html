@@ -1,185 +1,308 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <!-- General -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>napari Plugin Developer Portal</title>
 
-<head>
-  <!-- General -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>napari Plugin Developer Portal</title>
+    <!-- CSS Imports -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Trispace:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="res/reset.css" media="all" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="res/index.css?v=1"
+      media="all"
+    />
+  </head>
 
-  <!-- CSS Imports -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Trispace:wght@300;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="res/reset.css" media="all">
-  <link rel="stylesheet" type="text/css" href="res/index.css?v=1" media="all">
-</head>
-
-<body>
-  <div class="container">
-    <div class="container__content">
-      <main>
-        <div class="header">
-          <div class="header__tagline">
-            <h1>Share your algorithm with biologists everywhere — no GUI development required.</h1>
-          </div>
-          <p>
-            We get it. You’ve got a killer method for analyzing microscopy data and would love to get it in the hands of
-            more biologists, but you’ve got better things to do than build user interfaces or learn
-            Java.
-          </p>
-          <p>
-            But by building your tool as a napari plugin, you don’t have to worry about any of that. Just build your
-            tool
-            as a python package, add a few lines of code, register it with napari.dev, et voila, its ready for
-            biologists
-            everywhere to use.
-          </p>
-          <p>
-            Napari is a new, Python-based, open source tool for visualizing and annotating 3D, time-series, and
-            multi-channel microscopy data. Led by a team of microscopy experts with deep expertise in
-            large imaging datasets and machine learning, napari is quickly becoming the preferred tool for visualizing
-            and
-            exploring microscopy data. And soon, napari will support analysis plugins, letting you easily package and
-            share your method for segmentation, denoising, tracking, detection and more.
-          </p>
-          <p>
-            Come join us. Be a part of the community of data scientists, bioimage analysts, imaging scientists and
-            biologists lowering barriers to access the latest methods in analyzing microscopy data.
-          </p>
-        </div>
-        <div class="sellers">
-          <div class="features">
-            <div class="feature">
-              <img class="feature__icon" src="res/1-python-gui.svg" alt="Python icon with arrow pointing to an application window.">
-              <h2>Python first</h2>
-              <p>
-                You shouldn’t have to learn Java just to make your tool easy for biologists to use. napari plugins are
-                written in Python, letting you use the machine learning and scientific computing frameworks you love,
-                like PyTorch, Tensorflow, Dask, and more.
-              </p>
+  <body>
+    <div class="container">
+      <div class="container__content">
+        <main>
+          <div class="header">
+            <div class="header__tagline">
+              <h1>
+                Share your algorithm with biologists everywhere — no GUI
+                development required.
+              </h1>
             </div>
-            <div class="feature">
-              <img class="feature__icon" src="res/2-commit-test.svg" alt="Git merge workflow with checked boxes.">
-              <h2>Testing & deployment services</h2>
-              <p>
-                Setting up automated testing of scientific Python tools can be a headache. With our Github
-                integrations, we make it easy for you to make sure your plugin works the way you want & share it with
-                the community when you’re ready.
-              </p>
-            </div>
-            <div class="feature">
-              <img class="feature__icon" src="res/3-connect-credit.svg" alt="Network graph with person at center and a 5-star rating.">
-              <h2>Get credit</h2>
-              <p>
-                When biologists use your plugin, we want to make sure that you get the credit. We’ll make it easy for
-                biologists to cite your plugin when they publish and let you maintain a public profile showcasing your
-                work.
-              </p>
-            </div>
-          </div>
-          <div class="quotes">
-            <div class="quote">
-              <q>
-                <a href="https://twitter.com/napari_imaging" target="_blank">@napari_imaging</a> is awesome 😍I felt like using the first iphone 😍 
-              </q>
-              <p>Hung-yi Wu <a href="https://twitter.com/hungyiwutw" target="_blank">@hungyiwutw</a></p>
-            </div>
-            <div class="quote">
-              <q>
-                Napari has completely changed image analysis in python. Looking forward to taking advantage of the new plugin system for <a href="https://twitter.com/findingcells" target="_blank">@findingcells</a>
-              </q>
-              <p>Adam Tyson <a href="https://twitter.com/adamltyson"  target="_blank">@adamltyson</a></p>
-            </div>
-            <div class="quote">
-              <q>
-                <a href="https://twitter.com/findingcells" target="_blank">@findingcells</a> <a href="https://twitter.com/napari_imaging" target="_blank">@napari_imaging</a> This is the tool I dreamed with during my MSc! Literally.
-              </q>
-              <p>Diego AC <a href="https://twitter.com/neurophotons" target="_blank">@neurophotons</a></p>
-            </div>
-            <div class="quote">
-              <q>
-                I think <a href="https://twitter.com/napari_imaging" target="_blank">@napari_imaging</a> is going to be a real game changer
-              </q>
-              <p>Diego AC <a href="https://twitter.com/neurophotons" target="_blank">@neurophotons</a></p>
-            </div>
-          </div>
-          <div class="learn-more">
-            <h4>Learn more</h4>
-            <ul>
-              <li><a target="_blank" href="https://napari.org/">napari.org</a></li>
-              <li><a target="_blank" href="https://github.com/napari/napari">napari on Github</a></li>
-              <li><a target="_blank" href="https://chanzuckerberg.com/science/programs-resources/imaging/">CZI
-                  Imaging</a>
-              </li>
-            </ul>
-            <h4>About</h4>
             <p>
-              The Napari Developer Portal is a project of the Chan Zuckerberg Initiative (CZI), supporting the open
-              source, community-led napari project. At CZI, we support the development of open source and community run
-              tools like napari, as part of our mission to accelerate biomedical research and help every scientist make
-              progress faster. The CZI Imaging Team seeks to remove barriers in the analysis of imaging and microscopy
-              data & make it easier for biologists to access emerging methods for bioimage analysis that leverage
-              machine
-              learning. CZI sees promise in napari and seeks to assist its development by providing resources not always
-              available to the open source community, including dedicated user research, design, and engineering
-              support.
-              napari is consensus-based community project and an open source tool with clearly defined governance model,
-              mission, and values. CZI is proud to collaborate with the science community to accelerate research, enable
-              open science, and change the incentives and culture of how science is practiced today.
+              We get it. You’ve got a killer method for analyzing microscopy
+              data and would love to get it in the hands of more biologists, but
+              you’ve got better things to do than build user interfaces or learn
+              Java.
+            </p>
+            <p>
+              But by building your tool as a napari plugin, you don’t have to
+              worry about any of that. Just build your tool as a python package,
+              add a few lines of code, register it with napari.dev, et voila,
+              its ready for biologists everywhere to use.
+            </p>
+            <p>
+              Napari is a new, Python-based, open source tool for visualizing
+              and annotating 3D, time-series, and multi-channel microscopy data.
+              Led by a team of microscopy experts with deep expertise in large
+              imaging datasets and machine learning, napari is quickly becoming
+              the preferred tool for visualizing and exploring microscopy data.
+              And soon, napari will support analysis plugins, letting you easily
+              package and share your method for segmentation, denoising,
+              tracking, detection and more.
+            </p>
+            <p>
+              Come join us. Be a part of the community of data scientists,
+              bioimage analysts, imaging scientists and biologists lowering
+              barriers to access the latest methods in analyzing microscopy
+              data.
             </p>
           </div>
+          <div class="sellers">
+            <div class="features">
+              <div class="feature">
+                <img
+                  class="feature__icon"
+                  src="res/1-python-gui.svg"
+                  alt="Python icon with arrow pointing to an application window."
+                />
+                <h2>Python first</h2>
+                <p>
+                  You shouldn’t have to learn Java just to make your tool easy
+                  for biologists to use. napari plugins are written in Python,
+                  letting you use the machine learning and scientific computing
+                  frameworks you love, like PyTorch, Tensorflow, Dask, and more.
+                </p>
+              </div>
+              <div class="feature">
+                <img
+                  class="feature__icon"
+                  src="res/2-commit-test.svg"
+                  alt="Git merge workflow with checked boxes."
+                />
+                <h2>Testing & deployment services</h2>
+                <p>
+                  Setting up automated testing of scientific Python tools can be
+                  a headache. With our Github integrations, we make it easy for
+                  you to make sure your plugin works the way you want & share it
+                  with the community when you’re ready.
+                </p>
+              </div>
+              <div class="feature">
+                <img
+                  class="feature__icon"
+                  src="res/3-connect-credit.svg"
+                  alt="Network graph with person at center and a 5-star rating."
+                />
+                <h2>Get credit</h2>
+                <p>
+                  When biologists use your plugin, we want to make sure that you
+                  get the credit. We’ll make it easy for biologists to cite your
+                  plugin when they publish and let you maintain a public profile
+                  showcasing your work.
+                </p>
+              </div>
+            </div>
+            <div class="quotes">
+              <div class="quote">
+                <q>
+                  <a href="https://twitter.com/napari_imaging" target="_blank"
+                    >@napari_imaging</a
+                  >
+                  is awesome 😍I felt like using the first iphone 😍
+                </q>
+                <p>
+                  Hung-yi Wu
+                  <a href="https://twitter.com/hungyiwutw" target="_blank"
+                    >@hungyiwutw</a
+                  >
+                </p>
+              </div>
+              <div class="quote">
+                <q>
+                  Napari has completely changed image analysis in python.
+                  Looking forward to taking advantage of the new plugin system
+                  for
+                  <a href="https://twitter.com/findingcells" target="_blank"
+                    >@findingcells</a
+                  >
+                </q>
+                <p>
+                  Adam Tyson
+                  <a href="https://twitter.com/adamltyson" target="_blank"
+                    >@adamltyson</a
+                  >
+                </p>
+              </div>
+              <div class="quote">
+                <q>
+                  <a href="https://twitter.com/findingcells" target="_blank"
+                    >@findingcells</a
+                  >
+                  <a href="https://twitter.com/napari_imaging" target="_blank"
+                    >@napari_imaging</a
+                  >
+                  This is the tool I dreamed with during my MSc! Literally.
+                </q>
+                <p>
+                  Diego AC
+                  <a href="https://twitter.com/neurophotons" target="_blank"
+                    >@neurophotons</a
+                  >
+                </p>
+              </div>
+              <div class="quote">
+                <q>
+                  I think
+                  <a href="https://twitter.com/napari_imaging" target="_blank"
+                    >@napari_imaging</a
+                  >
+                  is going to be a real game changer
+                </q>
+                <p>
+                  Diego AC
+                  <a href="https://twitter.com/neurophotons" target="_blank"
+                    >@neurophotons</a
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="learn-more">
+              <h4>Learn more</h4>
+              <ul>
+                <li>
+                  <a target="_blank" href="https://napari.org/">napari.org</a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://github.com/napari/napari"
+                    >napari on Github</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://chanzuckerberg.com/science/programs-resources/imaging/"
+                    >CZI Imaging</a
+                  >
+                </li>
+              </ul>
+              <h4>About</h4>
+              <p>
+                The Napari Developer Portal is a project of the Chan Zuckerberg
+                Initiative (CZI), supporting the open source, community-led
+                napari project. At CZI, we support the development of open
+                source and community run tools like napari, as part of our
+                mission to accelerate biomedical research and help every
+                scientist make progress faster. The CZI Imaging Team seeks to
+                remove barriers in the analysis of imaging and microscopy data &
+                make it easier for biologists to access emerging methods for
+                bioimage analysis that leverage machine learning. CZI sees
+                promise in napari and seeks to assist its development by
+                providing resources not always available to the open source
+                community, including dedicated user research, design, and
+                engineering support. napari is consensus-based community project
+                and an open source tool with clearly defined governance model,
+                mission, and values. CZI is proud to collaborate with the
+                science community to accelerate research, enable open science,
+                and change the incentives and culture of how science is
+                practiced today.
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+      <div class="container__signup">
+        <div class="signup-hero">
+          <h3 class="signup-hero__tagline">
+            Get early access to the napari Plugin Developer Portal
+          </h3>
+          <form
+            action="https://chanzuckerberg.us5.list-manage.com/subscribe/post"
+            method="post"
+          >
+            <input type="hidden" name="u" value="79f50c0d0474ff43dffedabda" />
+            <input type="hidden" name="id" value="63bf16756e" />
+            <div style="position: absolute; left: -5000px" aria-hidden="true">
+              <!-- bot bait -->
+              <input
+                type="text"
+                name="b_79f50c0d0474ff43dffedabda_63bf16756e"
+                tabindex="-1"
+                value=""
+              />
+            </div>
+            <div class="signup-hero__form">
+              <input
+                type="email"
+                name="EMAIL"
+                aria-label="email address"
+                placeholder="Email"
+                required
+              />
+              <button type="submit">Sign up!</button>
+            </div>
+          </form>
+          <q
+            >Sign up today for a front-row seat to the next frontier of bioimage
+            analysis.</q
+          >
         </div>
-      </main>
-    </div>
-    <div class="container__signup">
-      <div class="signup-hero">
-        <h3 class="signup-hero__tagline">Get early access to the napari Plugin Developer Portal</h3>
-        <form action="https://chanzuckerberg.us5.list-manage.com/subscribe/post" method="post">
-          <input type="hidden" name="u" value="79f50c0d0474ff43dffedabda" />
-          <input type="hidden" name="id" value="63bf16756e" />
-          <div style="position: absolute; left: -5000px;" aria-hidden="true">
-            <!-- bot bait -->
-            <input type="text" name="b_79f50c0d0474ff43dffedabda_63bf16756e" tabindex="-1" value="" />
-          </div>
-          <div class="signup-hero__form">
-            <input type="email" name="EMAIL" aria-label="email address" placeholder="Email" required />
-            <button type="submit">Sign up!</button>
-          </div>
-        </form>
-        <q>Sign up today for a front-row seat to the next frontier of bioimage analysis.</q>
       </div>
     </div>
-  </div>
-  <footer>
-    <div class="footer-content">
-      <ul>
-        <li><a href="https://chanzuckerberg.com/careers" target="_blank">Jobs</a></li>
-        <li><a href="mailto:team@napari.dev" target="_blank">Contact</a></li>
-        <li><a href="" target="_blank">Privacy policy</a></li>
-      </ul>
-      <div class="logos">
-        <a href="https://chanzuckerberg.com" class="has-image" target="_blank"><img src="res/czi-logo.svg"
-            alt="Chan Zuckerberg Initiative logo"></a>
-        <div class="vertical-line"></div>
-        <a href="https://napari.org" class="has-image" target="_blank"><img src="res/napari-logo.png" alt="napari logo"></a>
+    <footer class="footer-wrapper">
+      <div class="footer-content">
+        <ul>
+          <li>
+            <a href="https://chanzuckerberg.com/careers" target="_blank"
+              >Jobs</a
+            >
+          </li>
+          <li><a href="mailto:team@napari.dev" target="_blank">Contact</a></li>
+          <li><a href="" target="_blank">Privacy policy</a></li>
+        </ul>
+        <div class="logos">
+          <a href="https://chanzuckerberg.com" class="has-image" target="_blank"
+            ><img src="res/czi-logo.svg" alt="Chan Zuckerberg Initiative logo"
+          /></a>
+          <div class="vertical-line"></div>
+          <a href="https://napari.org" class="has-image" target="_blank"
+            ><img src="res/napari-logo.png" alt="napari logo"
+          /></a>
+        </div>
       </div>
+      <p>Photo provided by Anna Bäckström and Emma Lundberg</p>
+    </footer>
+    <div class="signup-hero signup-hero--mobile">
+      <h3 class="signup-hero__tagline">
+        Get early access to the napari Plugin Developer Portal
+      </h3>
+      <form
+        action="https://chanzuckerberg.us5.list-manage.com/subscribe/post"
+        method="post"
+      >
+        <input type="hidden" name="u" value="79f50c0d0474ff43dffedabda" />
+        <input type="hidden" name="id" value="63bf16756e" />
+        <div style="position: absolute; left: -5000px" aria-hidden="true">
+          <!-- bot bait -->
+          <input
+            type="text"
+            name="b_79f50c0d0474ff43dffedabda_63bf16756e"
+            tabindex="-1"
+            value=""
+          />
+        </div>
+        <div class="signup-hero__form">
+          <input
+            type="email"
+            name="EMAIL"
+            aria-label="email address"
+            placeholder="Email"
+            required
+          />
+          <button type="submit">Sign up!</button>
+        </div>
+      </form>
     </div>
-    <p>Photo provided by Anna Bäckström and Emma Lundberg</p>
-  </footer>
-  <div class="signup-hero signup-hero--mobile">
-    <h3 class="signup-hero__tagline">Get early access to the napari Plugin Developer Portal</h3>
-    <form action="https://chanzuckerberg.us5.list-manage.com/subscribe/post" method="post">
-      <input type="hidden" name="u" value="79f50c0d0474ff43dffedabda" />
-      <input type="hidden" name="id" value="63bf16756e" />
-      <div style="position: absolute; left: -5000px;" aria-hidden="true">
-        <!-- bot bait -->
-        <input type="text" name="b_79f50c0d0474ff43dffedabda_63bf16756e" tabindex="-1" value="" />
-      </div>
-      <div class="signup-hero__form">
-        <input type="email" name="EMAIL" aria-label="email address" placeholder="Email" required />
-        <button type="submit">Sign up!</button>
-      </div>
-    </form>
-  </div>
-</body>
-
+  </body>
 </html>
