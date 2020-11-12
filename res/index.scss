@@ -71,7 +71,8 @@ h2,
 q {
   @extend %text;
 
-  font-family: "Trispace", Menlo, Courier, Lucida, Console, Mono, sans-serif;
+  font-family: "Trispace", "Menlo", Courier, Lucida, "Console", "Mono",
+    sans-serif;
   font-weight: 600;
 }
 
