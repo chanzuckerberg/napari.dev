@@ -53,7 +53,7 @@ $max-font-size-multiplier: ($max-width / $wide-screen) *
 body {
   @extend %text-spacing;
 
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", "Roboto", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   color: $color-black;
@@ -71,7 +71,7 @@ h2,
 q {
   @extend %text;
 
-  font-family: "Trispace", sans-serif;
+  font-family: "Trispace", Menlo, Courier, Lucida, Console, Mono, sans-serif;
   font-weight: 600;
 }
 
@@ -114,7 +114,17 @@ a {
     // make height same size as imgs
     display: inline-block;
     line-height: 0;
+    width: max-content;
+    height: max-content;
   }
+}
+
+strong {
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
 }
 
 // ====================
@@ -216,18 +226,6 @@ a {
   }
 }
 
-.learn-more {
-  margin-top: 3.5rem;
-
-  ul {
-    margin-bottom: var(--gutter);
-
-    a {
-      font-size: 1.4em;
-    }
-  }
-}
-
 .quote {
   display: flex;
   flex-direction: column;
@@ -237,22 +235,38 @@ a {
     border-top: $smallest-unit solid $color-black;
   }
 
-  q {
+  a {
     margin-top: 2rem;
 
-    &::before {
-      content: "";
-      display: block;
+    img {
       width: 4rem;
       height: 4rem;
-      background: url("twitter-logo.svg") no-repeat;
-      fill: $color-primary-light;
-      margin-bottom: 1rem;
+    }
+  }
+
+  q {
+    margin-top: 1rem;
+
+    &:first-child {
+      // no icon
+      margin-top: 3.5rem;
     }
   }
 
   p {
     font-weight: 600;
+  }
+}
+
+.learn-more {
+  margin-top: 3.5rem;
+
+  ul {
+    margin-bottom: var(--gutter);
+
+    a {
+      font-size: 1.4em;
+    }
   }
 }
 
