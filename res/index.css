@@ -107,43 +107,22 @@ em {
   min-width: 300px;
 }
 .container__signup {
-  display: none;
-}
-
-.header {
   width: 100%;
-}
-.header__tagline {
-  padding: var(--gutter);
-  background-color: black;
-  color: white;
-  margin-bottom: 1.6rem;
-}
-.header__tagline h1 {
-  margin: 0;
-}
-.header p {
-  padding: 0 var(--gutter);
-  font-size: 1.2em;
-}
-
-.sellers {
-  padding: 0 var(--gutter);
+  min-width: 300px;
+  position: sticky;
+  bottom: 0;
 }
 
 .signup-hero {
-  min-width: 300px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  width: 100%;
-  background-position-y: -50%;
+  background-position-y: 50%;
   color: white;
   padding: 1rem var(--gutter);
   padding-bottom: 2rem;
-  position: sticky;
   height: 9.3rem;
-  bottom: 0;
 }
 .signup-hero h3 {
   margin-bottom: 1rem;
@@ -174,8 +153,30 @@ em {
   margin-top: 0.5rem;
 }
 .signup-hero q {
+  display: none;
   margin-top: 1.2rem;
   margin-bottom: 0;
+}
+
+.header {
+  width: 100%;
+}
+.header__tagline {
+  padding: var(--gutter);
+  background-color: black;
+  color: white;
+  margin-bottom: 1.6rem;
+}
+.header__tagline h1 {
+  margin: 0;
+}
+.header p {
+  padding: 0 var(--gutter);
+  font-size: 1.2em;
+}
+
+.sellers {
+  padding: 0 var(--gutter);
 }
 
 .quote {
@@ -216,7 +217,7 @@ em {
 .footer-wrapper {
   width: 100%;
   min-width: 300px;
-  background-position-y: 50%;
+  background-position-y: -50%;
   box-sizing: border-box;
   height: 9.3rem;
   padding: 2rem var(--gutter);
@@ -308,10 +309,6 @@ em {
     --column: calc(3 * var(--gutter));
   }
 
-  .signup-hero--mobile {
-    display: none;
-  }
-
   .container {
     display: flex;
     flex-direction: row;
@@ -373,6 +370,9 @@ em {
   }
   .container__signup .signup-hero__form * {
     height: var(--gutter);
+  }
+  .container__signup .signup-hero q {
+    display: block;
   }
 }
 @media all and (min-width: 1050px) {
