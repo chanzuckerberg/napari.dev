@@ -169,7 +169,11 @@ em {
   height: 9.3rem;
 
   h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  form {
+    flex: 1;
   }
 
   &__form {
@@ -177,6 +181,7 @@ em {
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+    height: 100%;
 
     * {
       @extend %text-spacing;
@@ -198,7 +203,6 @@ em {
       border: none;
       color: $color-white;
       text-align: center;
-      margin-top: 0.5rem;
     }
   }
 
@@ -361,7 +365,6 @@ em {
 
     &__form {
       flex-direction: row;
-      justify-content: space-between;
 
       * {
         height: 2.6em;
@@ -373,7 +376,6 @@ em {
 
       button[type="submit"] {
         width: var(--column);
-        margin: 0;
       }
     }
   }
@@ -464,13 +466,17 @@ em {
         background: rgba($color-black, 0.75);
         height: auto;
 
-        &__sinker {
-          display: block;
+        h3 {
+          margin-bottom: 1.7rem;
         }
 
         &__form {
           * {
             height: var(--gutter);
+          }
+
+          button[type="submit"] {
+            margin-top: 0.8rem;
           }
         }
 
