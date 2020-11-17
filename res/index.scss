@@ -145,12 +145,10 @@ em {
 
   &__content {
     width: 100%;
-    min-width: $min-width;
   }
 
   &__signup {
     width: 100%;
-    min-width: $min-width;
     position: sticky;
     bottom: 0;
   }
@@ -183,7 +181,6 @@ em {
     * {
       @extend %text-spacing;
 
-      box-sizing: border-box;
       font-size: 1em;
       height: 2em;
       border-radius: $smallest-unit;

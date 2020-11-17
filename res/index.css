@@ -104,11 +104,9 @@ em {
 }
 .container__content {
   width: 100%;
-  min-width: 300px;
 }
 .container__signup {
   width: 100%;
-  min-width: 300px;
   position: sticky;
   bottom: 0;
 }
@@ -134,7 +132,6 @@ em {
   width: 100%;
 }
 .signup-hero__form * {
-  box-sizing: border-box;
   font-size: 1em;
   height: 2em;
   border-radius: 1px;
