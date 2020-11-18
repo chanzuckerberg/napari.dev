@@ -79,11 +79,11 @@ h1 {
 }
 
 h2 {
-  font-size: 1.7em;
+  font-size: 2em;
 }
 
 h3 {
-  font-size: 0.83em;
+  font-size: 0.9em;
 }
 
 h4 {
@@ -98,6 +98,7 @@ q {
 }
 
 p {
+  font-size: 1.3em;
   margin-bottom: 2rem;
 
   &:last-of-type {
@@ -229,7 +230,7 @@ em {
 
   p {
     padding: 0 var(--gutter);
-    font-size: 1.2em;
+    font-size: 1.5em;
   }
 }
 
@@ -330,7 +331,7 @@ em {
 
   p {
     color: $color-white;
-    font-size: 0.6em;
+    font-size: 0.9em;
     position: absolute;
     bottom: 0.5rem;
     right: 1rem;
@@ -377,6 +378,10 @@ em {
       button[type="submit"] {
         width: var(--column);
       }
+    }
+
+    h3 {
+      font-size: 1em;
     }
   }
 
