@@ -143,9 +143,16 @@ em {
   padding: 0;
 }
 .signup-hero__form input[type=email] {
-  color: #9e9e9e;
+  color: black;
   border: 1px solid #9e9e9e;
   padding: 0.5em;
+}
+.signup-hero__form input[type=email] ::placeholder {
+  color: #9e9e9e;
+  opacity: 1;
+}
+.signup-hero__form input[type=email] :-ms-input-placeholder {
+  color: #9e9e9e;
 }
 .signup-hero__form button[type=submit] {
   background-color: #0286ff;
