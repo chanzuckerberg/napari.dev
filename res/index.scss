@@ -197,14 +197,15 @@ em {
       color: $color-black;
       border: $smallest-unit solid $color-gray-medium;
       padding: 0.5em;
+      -webkit-appearance: none;
 
-      ::placeholder {
+      &::placeholder {
         // Chrome, Firefox, Opera, Safari 10.1+
         color: $color-gray-medium;
         opacity: 1; // Firefox
       }
 
-      :-ms-input-placeholder {
+      &:-ms-input-placeholder {
         // Internet Explorer 10-11, Edge
         color: $color-gray-medium;
       }
