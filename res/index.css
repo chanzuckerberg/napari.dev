@@ -1,7 +1,9 @@
 :root {
   --gutter: 6.6666666667vw;
   --num-cols: 3;
-  --column: calc((100vw - (var(--num-cols) + 1) * var(--gutter)) / var(--num-cols));
+  --column: calc(
+    (100vw - (var(--num-cols) + 1) * var(--gutter)) / var(--num-cols)
+  );
   font-size: 62.5%;
 }
 
@@ -274,10 +276,19 @@ em {
   margin-bottom: 0;
 }
 
-.feature__icon {
+.feature__tagline {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+}
+.feature__tagline__icon {
   width: var(--column);
   height: var(--column);
-  margin-bottom: 1.3rem;
+  margin-right: var(--gutter);
+  margin-bottom: 0.7rem;
+}
+.feature__tagline__text {
+  margin: 0;
 }
 
 @media all and (max-width: 299px) {
@@ -303,10 +314,6 @@ em {
   }
   .signup-hero h3 {
     font-size: 1em;
-  }
-
-  .feature__icon {
-    margin-bottom: 1.5rem;
   }
 }
 @media all and (min-width: 535px) {
@@ -335,9 +342,6 @@ em {
   .container__content main {
     width: calc(3 * var(--column) + var(--gutter));
     right: 0;
-  }
-  .container__content .feature__icon {
-    margin-bottom: 1.6rem;
   }
   .container__signup {
     flex: 3;
