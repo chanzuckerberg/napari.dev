@@ -392,16 +392,15 @@ em {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-x: hidden;
   }
   body .container {
     width: 1050px;
   }
   body .container .header > h1::before {
-    left: -100vw;
+    left: calc(525px - 50vw - var(--gutter));
   }
   body .container__signup::before {
-    right: -100vw;
+    right: calc(525px - 50vw);
   }
 }
 

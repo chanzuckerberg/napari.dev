@@ -506,17 +506,16 @@ em {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-x: hidden;
 
     .container {
       width: $max-width;
 
       .header > h1::before {
-        left: -100vw;
+        left: calc(#{$max-width / 2} - 50vw - var(--gutter));
       }
 
       &__signup::before {
-        right: -100vw;
+        right: calc(#{$max-width / 2} - 50vw);
       }
     }
   }
