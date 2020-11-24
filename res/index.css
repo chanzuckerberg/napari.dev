@@ -1,7 +1,9 @@
 :root {
   --gutter: 6.6666666667vw;
   --num-cols: 3;
-  --column: calc((100vw - (var(--num-cols) + 1) * var(--gutter)) / var(--num-cols));
+  --column: calc(
+    (100vw - (var(--num-cols) + 1) * var(--gutter)) / var(--num-cols)
+  );
   font-size: 62.5%;
 }
 
