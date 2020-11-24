@@ -145,7 +145,9 @@ em {
   min-width: $min-width;
 
   &__content {
-    width: 100%;
+    main {
+      padding: 0 var(--gutter);
+    }
   }
 
   &__signup {
@@ -229,25 +231,27 @@ em {
 .header {
   width: 100%;
 
-  &__tagline {
-    padding: var(--gutter);
-    background-color: $color-black;
+  h1 {
     color: $color-white;
     margin-bottom: 1.6rem;
+    padding: var(--gutter) 0;
+    position: relative;
 
-    h1 {
-      margin: 0;
+    &::before {
+      content: "";
+      background: $color-black;
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: calc(-1 * var(--gutter));
+      right: calc(-1 * var(--gutter));
+      z-index: -1;
     }
   }
 
   p {
-    padding: 0 var(--gutter);
     font-size: 1.5em;
   }
-}
-
-.sellers {
-  padding: 0 var(--gutter);
 }
 
 .quote {
@@ -423,41 +427,17 @@ em {
 
     &__content {
       flex: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
 
-      %align-right {
-        margin-right: var(--gutter);
+      main {
         width: calc(3 * var(--column) + var(--gutter));
+        right: 0;
       }
 
-      .header {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-
-        &__tagline {
-          display: flex;
-          justify-content: flex-end;
-          padding-right: 0;
-          width: 100%;
-        }
-
-        h1,
-        p {
-          @extend %align-right;
-
-          padding-right: 0;
-        }
-      }
-
-      .sellers {
-        @extend %align-right;
-
-        float: right;
-        padding: 0;
-
-        .feature__icon {
-          margin-bottom: 1.6rem;
-        }
+      .feature__icon {
+        margin-bottom: 1.6rem;
       }
     }
 
@@ -468,11 +448,21 @@ em {
       position: sticky;
       top: 0;
       bottom: auto;
-      background: url("bkg.jpg");
-      background-size: auto 135%;
-      background-position: top 0% right 25%;
       display: flex;
       align-items: center;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: url("bkg.jpg");
+        background-size: auto 135%;
+        background-position: top 0% right 25%;
+        z-index: -1;
+      }
 
       .signup-hero {
         min-width: 0;
@@ -510,5 +500,24 @@ em {
     font-size: $max-font-size-multiplier;
 
     --gutter: #{(50px / $max-font-size) * 1rem};
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+
+    .container {
+      width: $max-width;
+
+      .header > h1::before {
+        left: -100vw;
+      }
+
+      &__signup::before {
+        right: -100vw;
+      }
+    }
   }
 }

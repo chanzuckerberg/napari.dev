@@ -103,8 +103,8 @@ em {
 .container {
   min-width: 300px;
 }
-.container__content {
-  width: 100%;
+.container__content main {
+  padding: 0 var(--gutter);
 }
 .container__signup {
   width: 100%;
@@ -170,22 +170,24 @@ em {
 .header {
   width: 100%;
 }
-.header__tagline {
-  padding: var(--gutter);
-  background-color: black;
+.header h1 {
   color: white;
   margin-bottom: 1.6rem;
+  padding: var(--gutter) 0;
+  position: relative;
 }
-.header__tagline h1 {
-  margin: 0;
+.header h1::before {
+  content: "";
+  background: black;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: calc(-1 * var(--gutter));
+  right: calc(-1 * var(--gutter));
+  z-index: -1;
 }
 .header p {
-  padding: 0 var(--gutter);
   font-size: 1.5em;
-}
-
-.sellers {
-  padding: 0 var(--gutter);
 }
 
 .quote {
@@ -325,32 +327,15 @@ em {
   }
   .container__content {
     flex: 4;
-  }
-  .container__content .sellers, .container__content .header h1,
-.container__content .header p {
-    margin-right: var(--gutter);
-    width: calc(3 * var(--column) + var(--gutter));
-  }
-  .container__content .header {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
   }
-  .container__content .header__tagline {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 0;
-    width: 100%;
+  .container__content main {
+    width: calc(3 * var(--column) + var(--gutter));
+    right: 0;
   }
-  .container__content .header h1,
-.container__content .header p {
-    padding-right: 0;
-  }
-  .container__content .sellers {
-    float: right;
-    padding: 0;
-  }
-  .container__content .sellers .feature__icon {
+  .container__content .feature__icon {
     margin-bottom: 1.6rem;
   }
   .container__signup {
@@ -360,11 +345,20 @@ em {
     position: sticky;
     top: 0;
     bottom: auto;
+    display: flex;
+    align-items: center;
+  }
+  .container__signup::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     background: url("bkg.jpg");
     background-size: auto 135%;
     background-position: top 0% right 25%;
-    display: flex;
-    align-items: center;
+    z-index: -1;
   }
   .container__signup .signup-hero {
     min-width: 0;
@@ -392,6 +386,22 @@ em {
   :root {
     font-size: 87.5%;
     --gutter: 3.5714285714rem;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+  body .container {
+    width: 1050px;
+  }
+  body .container .header > h1::before {
+    left: -100vw;
+  }
+  body .container__signup::before {
+    right: -100vw;
   }
 }
 
