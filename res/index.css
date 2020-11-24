@@ -1,6 +1,7 @@
 :root {
   --gutter: 6.6666666667vw;
-  --column: calc((100vw - 4 * var(--gutter)) / 3);
+  --num-cols: 3;
+  --column: calc((100vw - (var(--num-cols) + 1) * var(--gutter)) / var(--num-cols));
   font-size: 62.5%;
 }
 
@@ -318,7 +319,7 @@ em {
   :root {
     --width-base: 750;
     --gutter: 4.8vw;
-    --column: calc(3 * var(--gutter));
+    --num-cols: 5;
   }
 
   .container {
@@ -387,6 +388,11 @@ em {
     font-size: 87.5%;
     --gutter: 3.5714285714rem;
   }
+}
+@media all and (min-width: 1200px) {
+  :root {
+    --column: 12.8571428571rem;
+  }
 
   body {
     display: flex;
@@ -394,13 +400,16 @@ em {
     align-items: center;
   }
   body .container {
-    width: 1050px;
+    width: 1200px;
   }
   body .container .header > h1::before {
-    left: calc(525px - 50vw - var(--gutter));
+    left: calc(600px - 50vw - var(--gutter));
   }
   body .container__signup::before {
-    right: calc(525px - 50vw);
+    right: calc(600px - 50vw);
+  }
+  body .container__signup .signup-hero {
+    width: calc(2 * var(--column));
   }
 }
 

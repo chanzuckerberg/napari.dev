@@ -8,7 +8,8 @@ $min-width: 300px;
 $email-unstacks: 350px;
 $text-grows: 535px;
 $wide-screen: 750px;
-$max-width: 1050px;
+$constant-font-size: 1050px;
+$max-width: 1200px;
 
 $smallest-unit: 1px;
 
@@ -16,12 +17,15 @@ $default-font-size: 16px;
 $min-font-size: 10px;
 $max-font-size: 14px;
 $min-font-size-multiplier: ($min-font-size / $default-font-size) * 100%;
-$max-font-size-multiplier: ($max-width / $wide-screen) *
+$max-font-size-multiplier: ($constant-font-size / $wide-screen) *
   $min-font-size-multiplier;
 
 :root {
   --gutter: #{(20px / $min-width) * 100vw};
-  --column: calc((100vw - 4 * var(--gutter)) / 3);
+  --num-cols: 3;
+  --column: calc(
+    (100vw - (var(--num-cols) + 1) * var(--gutter)) / var(--num-cols)
+  );
 
   font-size: $min-font-size-multiplier;
 }
@@ -418,7 +422,7 @@ em {
   :root {
     --width-base: #{$wide-screen / 1px};
     --gutter: #{(36px / $wide-screen) * 100vw};
-    --column: calc(3 * var(--gutter));
+    --num-cols: 5;
   }
 
   .container {
@@ -495,11 +499,17 @@ em {
   }
 }
 
-@media all and (min-width: $max-width) {
+@media all and (min-width: $constant-font-size) {
   :root {
     font-size: $max-font-size-multiplier;
 
     --gutter: #{(50px / $max-font-size) * 1rem};
+  }
+}
+
+@media all and (min-width: $max-width) {
+  :root {
+    --column: #{(180px / $max-font-size) * 1rem};
   }
 
   body {
@@ -514,8 +524,14 @@ em {
         left: calc(#{$max-width / 2} - 50vw - var(--gutter));
       }
 
-      &__signup::before {
-        right: calc(#{$max-width / 2} - 50vw);
+      &__signup {
+        &::before {
+          right: calc(#{$max-width / 2} - 50vw);
+        }
+
+        .signup-hero {
+          width: calc(2 * var(--column));
+        }
       }
     }
   }
