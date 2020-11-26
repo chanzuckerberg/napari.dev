@@ -87,7 +87,7 @@ h2 {
 }
 
 h3 {
-  font-size: 0.9em;
+  font-size: 0.93em;
 }
 
 h4 {
@@ -172,11 +172,34 @@ em {
   background-position-y: 50%;
   color: $color-white;
   padding: 1rem var(--gutter);
-  padding-bottom: 2rem;
-  height: 9.3rem;
+  padding-bottom: 0.5rem;
 
-  h3 {
+  &__tagline {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-bottom: 0.6rem;
+    width: 100%;
+    justify-content: space-between;
+
+    h3 {
+      margin: 0;
+
+      &:first-of-type::after {
+        content: " ";
+        white-space: pre;
+      }
+    }
+  }
+
+  p {
+    font-size: 0.83rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .attribution {
+    font-size: 0.6rem;
+    margin-bottom: 0;
   }
 
   form {
@@ -189,6 +212,7 @@ em {
     justify-content: space-between;
     width: 100%;
     height: 100%;
+    margin-bottom: 0.7rem;
 
     * {
       @extend %text-spacing;
@@ -222,13 +246,8 @@ em {
       border: none;
       color: $color-white;
       text-align: center;
+      margin-top: 0.5rem;
     }
-  }
-
-  q {
-    display: none;
-    margin-top: 1.2rem;
-    margin-bottom: 0;
   }
 }
 
@@ -302,64 +321,24 @@ em {
   }
 }
 
-.footer-wrapper {
-  width: 100%;
-  min-width: $min-width;
+.logos {
+  display: flex;
+  margin-bottom: 4rem;
 
-  @extend %image-background-darkened;
-
-  background-position-y: -50%;
-  box-sizing: border-box;
-  height: 9.3rem;
-  padding: 2rem var(--gutter);
-  position: relative;
-
-  .footer-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    ul > li {
-      display: inline;
-
-      &:not(:first-child) {
-        margin-left: 1rem;
-      }
-
-      a {
-        font-weight: 700;
-        font-size: 0.83em;
-        color: $color-white;
-      }
-    }
-
-    .logos {
-      display: flex;
-
-      a > img {
-        width: 3rem;
-        height: 3rem;
-      }
-
-      .vertical-line {
-        margin: 0 1rem;
-        border-right: $smallest-unit solid $color-white;
-      }
-    }
+  a > img {
+    width: 3rem;
+    height: 3rem;
   }
 
-  p {
-    color: $color-white;
-    font-size: 0.9em;
-    position: absolute;
-    bottom: 0.5rem;
-    right: 1rem;
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
+  .vertical-line {
+    margin: 0 1rem;
+    border-right: $smallest-unit solid $color-black;
   }
+}
+
+.cta {
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
 .feature {
@@ -408,11 +387,8 @@ em {
 
       button[type="submit"] {
         width: var(--column);
+        margin-top: 0;
       }
-    }
-
-    h3 {
-      font-size: 1em;
     }
   }
 }
@@ -480,8 +456,12 @@ em {
         background: rgba($color-black, 0.75);
         height: auto;
 
-        h3 {
+        &__tagline {
           margin-bottom: 1.7rem;
+        }
+
+        .attribution {
+          margin-top: 0.5rem;
         }
 
         &__form {
@@ -492,10 +472,6 @@ em {
           button[type="submit"] {
             margin-top: 0.8rem;
           }
-        }
-
-        q {
-          display: block;
         }
       }
     }

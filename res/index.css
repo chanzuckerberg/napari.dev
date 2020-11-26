@@ -17,7 +17,7 @@ q, .signup-hero__form *, body {
   letter-spacing: 0.01rem;
 }
 
-.footer-wrapper, .signup-hero {
+.signup-hero {
   background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("bkg.jpg");
   background-size: 100%;
 }
@@ -51,7 +51,7 @@ h2 {
 }
 
 h3 {
-  font-size: 0.9em;
+  font-size: 0.93em;
 }
 
 h4 {
@@ -123,11 +123,30 @@ em {
   background-position-y: 50%;
   color: white;
   padding: 1rem var(--gutter);
-  padding-bottom: 2rem;
-  height: 9.3rem;
+  padding-bottom: 0.5rem;
 }
-.signup-hero h3 {
+.signup-hero__tagline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin-bottom: 0.6rem;
+  width: 100%;
+  justify-content: space-between;
+}
+.signup-hero__tagline h3 {
+  margin: 0;
+}
+.signup-hero__tagline h3:first-of-type::after {
+  content: " ";
+  white-space: pre;
+}
+.signup-hero p {
+  font-size: 0.83rem;
+  margin-bottom: 0.6rem;
+}
+.signup-hero .attribution {
+  font-size: 0.6rem;
+  margin-bottom: 0;
 }
 .signup-hero form {
   flex: 1;
@@ -138,6 +157,7 @@ em {
   justify-content: space-between;
   width: 100%;
   height: 100%;
+  margin-bottom: 0.7rem;
 }
 .signup-hero__form * {
   font-size: 1em;
@@ -163,11 +183,7 @@ em {
   border: none;
   color: white;
   text-align: center;
-}
-.signup-hero q {
-  display: none;
-  margin-top: 1.2rem;
-  margin-bottom: 0;
+  margin-top: 0.5rem;
 }
 
 .header {
@@ -228,52 +244,22 @@ em {
   font-size: 1.4em;
 }
 
-.footer-wrapper {
-  width: 100%;
-  min-width: 300px;
-  background-position-y: -50%;
-  box-sizing: border-box;
-  height: 9.3rem;
-  padding: 2rem var(--gutter);
-  position: relative;
-}
-.footer-wrapper .footer-content {
+.logos {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  margin-bottom: 4rem;
 }
-.footer-wrapper .footer-content ul > li {
-  display: inline;
-}
-.footer-wrapper .footer-content ul > li:not(:first-child) {
-  margin-left: 1rem;
-}
-.footer-wrapper .footer-content ul > li a {
-  font-weight: 700;
-  font-size: 0.83em;
-  color: white;
-}
-.footer-wrapper .footer-content .logos {
-  display: flex;
-}
-.footer-wrapper .footer-content .logos a > img {
+.logos a > img {
   width: 3rem;
   height: 3rem;
 }
-.footer-wrapper .footer-content .logos .vertical-line {
+.logos .vertical-line {
   margin: 0 1rem;
-  border-right: 1px solid white;
+  border-right: 1px solid black;
 }
-.footer-wrapper p {
-  color: white;
-  font-size: 0.9em;
-  position: absolute;
-  bottom: 0.5rem;
-  right: 1rem;
-}
-.footer-wrapper p:last-of-type {
-  margin-bottom: 0;
+
+.cta {
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
 .feature__tagline {
@@ -311,9 +297,7 @@ em {
   }
   .signup-hero__form button[type=submit] {
     width: var(--column);
-  }
-  .signup-hero h3 {
-    font-size: 1em;
+    margin-top: 0;
   }
 }
 @media all and (min-width: 535px) {
@@ -374,17 +358,17 @@ em {
     background: rgba(0, 0, 0, 0.75);
     height: auto;
   }
-  .container__signup .signup-hero h3 {
+  .container__signup .signup-hero__tagline {
     margin-bottom: 1.7rem;
+  }
+  .container__signup .signup-hero .attribution {
+    margin-top: 0.5rem;
   }
   .container__signup .signup-hero__form * {
     height: var(--gutter);
   }
   .container__signup .signup-hero__form button[type=submit] {
     margin-top: 0.8rem;
-  }
-  .container__signup .signup-hero q {
-    display: block;
   }
 }
 @media all and (min-width: 1050px) {
