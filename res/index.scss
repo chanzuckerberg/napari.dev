@@ -363,10 +363,21 @@ em {
 }
 
 .feature {
-  &__icon {
-    width: var(--column);
-    height: var(--column);
-    margin-bottom: 1.3rem;
+  &__tagline {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+
+    &__icon {
+      width: var(--column);
+      height: var(--column);
+      margin-right: var(--gutter);
+      margin-bottom: 0.7rem; // to align with text baseline
+    }
+
+    &__text {
+      margin: 0;
+    }
   }
 }
 
@@ -404,10 +415,6 @@ em {
       font-size: 1em;
     }
   }
-
-  .feature__icon {
-    margin-bottom: 1.5rem;
-  }
 }
 
 @media all and (min-width: $text-grows) {
@@ -438,10 +445,6 @@ em {
       main {
         width: calc(3 * var(--column) + var(--gutter));
         right: 0;
-      }
-
-      .feature__icon {
-        margin-bottom: 1.6rem;
       }
     }
 
