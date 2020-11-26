@@ -39,6 +39,7 @@
 
     <!-- Scripts -->
     <script async defer data-domain="napari.dev" src="https://plausible.io/js/plausible.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
   </head>
 
   <body>
@@ -164,6 +165,7 @@
           <form
             action="https://chanzuckerberg.us5.list-manage.com/subscribe/post"
             method="post"
+            onsubmit="plausible('Signup')"
           >
             <input type="hidden" name="u" value="79f50c0d0474ff43dffedabda" />
             <input type="hidden" name="id" value="63bf16756e" />
