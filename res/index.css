@@ -255,6 +255,9 @@ em {
   white-space: pre;
 }
 #privacy ul li p {
+  margin-bottom: 0;
+}
+#privacy ul li:not(:last-child) {
   margin-bottom: 1.5rem;
 }
 
