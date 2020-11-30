@@ -309,36 +309,32 @@ em {
   }
 }
 
-.appendix {
-  margin-top: var(--gutter);
+#about {
+  margin: var(--gutter) 0;
 
-  .about {
-    margin-bottom: var(--gutter);
-
-    p {
-      margin-bottom: 1.5rem;
-    }
-
-    li > a {
-      font-size: 1.4em;
-    }
+  p {
+    margin-bottom: 1.5rem;
   }
 
-  .privacy-policy {
-    ul {
-      li {
-        display: flex;
-        flex-direction: row;
-        align-content: baseline;
+  li > a {
+    font-size: 1.4em;
+  }
+}
 
-        &::before {
-          content: "• ";
-          white-space: pre;
-        }
+#privacy {
+  ul {
+    li {
+      display: flex;
+      flex-direction: row;
+      align-content: baseline;
 
-        p {
-          margin-bottom: 1.5rem;
-        }
+      &::before {
+        content: "• ";
+        white-space: pre;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
       }
     }
   }

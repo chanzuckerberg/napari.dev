@@ -46,7 +46,7 @@
     <div class="container">
       <div class="container__content">
         <main>
-          <div class="header">
+          <div class="header" id="introduction">
             <h1>
               Share your analysis tool with researchers everywhere — No GUI development required.
             </h1>
@@ -54,11 +54,11 @@
               We’re building developer services to help bring Python-driven analysis to the imaging community, and we want you to be involved.
             </p>
             <p>
-              Led by microscopy and Python experts and built by a growing community, <strong>napari</strong> is quickly becoming an essential tool for visualizing and exploring imaging data. Our soon-to-debut <strong>napari</strong> Developer Portal, managed by the Imaging team at the Chan Zuckerberg Initiative, will support <strong>napari</strong>’s plugin developer community every step of the way.
+              Led by microscopy and Python experts and built by a growing community, <strong><a href="#about">napari</a></strong> is quickly becoming an essential tool for visualizing and exploring imaging data. Our soon-to-debut <strong>napari</strong> Developer Portal, managed by the Imaging team at the Chan Zuckerberg Initiative, will support <strong>napari</strong>’s plugin developer community every step of the way.
             </p>
           </div>
-          <div class="features">
-            <div class="feature">
+          <div id="features">
+            <div class="feature" id="python-first">
               <div class="feature__tagline">
                 <img
                   class="feature__tagline__icon" 
@@ -71,7 +71,7 @@
                 You shouldn’t have to learn another programming language or write GUIs to make your analysis tool easy to use. <strong>napari</strong> lets you use the Python machine learning and scientific computing frameworks you love (like NumPy, PyTorch, Dask). <strong>napari</strong> is designed with researchers’ needs in mind and takes the GUI work off your hands.
               </p>
             </div>
-            <div class="feature">
+            <div class="feature" id="testing">
               <div class="feature__tagline">
                 <img
                   class="feature__tagline__icon"
@@ -84,7 +84,7 @@
                 Testing and packaging scientific Python tools can be a headache. Our Github integrations will help you every step of the way, so you can be sure your plugin works the way you want and share it with the community when you’re ready.
               </p>
             </div>
-            <div class="feature">
+            <div class="feature" id="get-credit">
               <div class="feature__tagline">
                 <img
                   class="feature__tagline__icon"
@@ -99,7 +99,7 @@
             </div>
           </div>
           <p class="cta">Sign up today and get a front-row seat to the next frontier of image analysis. Our followup questionnaire will let you tell us what you want to build and how we can help, you’ll be the first to know when the portal launches, and be able to connect with the CZI team to provide early feedback to make the portal work for you.</p>
-          <div class="quotes">
+          <div id="quotes">
             <div class="quote">
               <a class="has-image" href="https://twitter.com/adamltyson/status/1257767021846069248" target="_blank">
                 <img src="res/twitter-logo.svg" alt="Twitter logo.">
@@ -131,61 +131,59 @@
               </p>
             </div>
           </div>
-          <div class="appendix">
-            <div class="about">
-              <h4>About</h4>
-              <p>
-                The <strong>napari</strong> Developer Portal is a service of the Chan Zuckerberg Initiative. <strong>napari</strong> is a consensus-based community project and an open source tool that enables high performance visualization and exploration of a broad range of imaging data, including microscopy, medical imaging, geospatial data, and more, with clearly defined <a href="https://napari.org/docs/dev/developers/GOVERNANCE.html" target="_blank">governance model, mission, and values</a>. At CZI, we support the development of open source and community run tools like <strong>napari</strong>, as part of our mission to accelerate biomedical research and help every scientist make progress faster. The CZI Imaging Team seeks to remove barriers in the analysis of imaging and microscopy data and make it easier for biologists to access emerging methods for bioimage analysis that leverage machine learning. CZI sees promise in <strong>napari</strong> and seeks to assist its development by providing resources not always available to the open source community, including dedicated user research, design, and engineering support. CZI is proud to collaborate with the science community to accelerate research and enable open science for all.
-              </p>
-              <ul>
-                <li>
-                  <a target="_blank" href="https://napari.org/">
-                    Learn more about napari
-                  </a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://github.com/napari/napari">
-                    Get involved in napari's development
-                  </a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://napari.zulipchat.com">
-                    Connect with the napari team
-                  </a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://twitter.com/napari-imaging">
-                    Follow napari on twitter
-                  </a>
-                </li>
-                <li>
-                  <a
-                    target="_blank"
-                    href="https://chanzuckerberg.com/science/programs-resources/imaging/"
-                    >
-                    Learn more about CZI Imaging
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="privacy-policy">
-              <h4>Privacy</h4>
-              <ul>
-                <li>
-                  <p>
-                    We use Mailchimp as our marketing platform. <a target="_blank" href="https://mailchimp.com/legal/">Learn more about Mailchimp's privacy practices here</a>.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    We use the privacy-friendly Plausible as our website analytics tool. <a target="_blank" href="https://plausible.io/data-policy">Learn more about Plausible’s data and privacy practices here</a>. <a target="_blank" href="https://plausible.io/napari.dev">View the public dashboard for napari.dev here</a>.
-                  </p>
-                </li>
-                <li>
-                  <p>We will never sell your data or share it with anyone that will.</p>
-                </li>
-              </ul>
-            </div>
+          <div id="about">
+            <h4>About</h4>
+            <p>
+              The <strong>napari</strong> Developer Portal is a service of the Chan Zuckerberg Initiative. <strong>napari</strong> is a consensus-based community project and an open source tool that enables high performance visualization and exploration of a broad range of imaging data, including microscopy, medical imaging, geospatial data, and more, with clearly defined <a href="https://napari.org/docs/dev/developers/GOVERNANCE.html" target="_blank">governance model, mission, and values</a>. At CZI, we support the development of open source and community run tools like <strong>napari</strong>, as part of our mission to accelerate biomedical research and help every scientist make progress faster. The CZI Imaging Team seeks to remove barriers in the analysis of imaging and microscopy data and make it easier for biologists to access emerging methods for bioimage analysis that leverage machine learning. CZI sees promise in <strong>napari</strong> and seeks to assist its development by providing resources not always available to the open source community, including dedicated user research, design, and engineering support. CZI is proud to collaborate with the science community to accelerate research and enable open science for all.
+            </p>
+            <ul>
+              <li>
+                <a target="_blank" href="https://napari.org/">
+                  Learn more about napari
+                </a>
+              </li>
+              <li>
+                <a target="_blank" href="https://github.com/napari/napari">
+                  Get involved in napari's development
+                </a>
+              </li>
+              <li>
+                <a target="_blank" href="https://napari.zulipchat.com">
+                  Connect with the napari team
+                </a>
+              </li>
+              <li>
+                <a target="_blank" href="https://twitter.com/napari-imaging">
+                  Follow napari on twitter
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://chanzuckerberg.com/science/programs-resources/imaging/"
+                  >
+                  Learn more about CZI Imaging
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div id="privacy">
+            <h4>Privacy</h4>
+            <ul>
+              <li>
+                <p>
+                  We use Mailchimp as our marketing platform. <a target="_blank" href="https://mailchimp.com/legal/">Learn more about Mailchimp's privacy practices here</a>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  We use the privacy-friendly Plausible as our website analytics tool. <a target="_blank" href="https://plausible.io/data-policy">Learn more about Plausible’s data and privacy practices here</a>. <a target="_blank" href="https://plausible.io/napari.dev">View the public dashboard for napari.dev here</a>.
+                </p>
+              </li>
+              <li>
+                <p>We will never sell your data or share it with anyone that will.</p>
+              </li>
+            </ul>
           </div>
           <div class="logos">
             <a href="https://napari.org" class="has-image" target="_blank">

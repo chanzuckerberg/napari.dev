@@ -235,28 +235,26 @@ em {
   font-weight: 600;
 }
 
-.appendix {
-  margin-top: var(--gutter);
+#about {
+  margin: var(--gutter) 0;
 }
-.appendix .about {
-  margin-bottom: var(--gutter);
-}
-.appendix .about p {
+#about p {
   margin-bottom: 1.5rem;
 }
-.appendix .about li > a {
+#about li > a {
   font-size: 1.4em;
 }
-.appendix .privacy-policy ul li {
+
+#privacy ul li {
   display: flex;
   flex-direction: row;
   align-content: baseline;
 }
-.appendix .privacy-policy ul li::before {
+#privacy ul li::before {
   content: "• ";
   white-space: pre;
 }
-.appendix .privacy-policy ul li p {
+#privacy ul li p {
   margin-bottom: 1.5rem;
 }
 
