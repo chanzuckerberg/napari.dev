@@ -309,21 +309,44 @@ em {
   }
 }
 
-.learn-more {
-  margin-top: 3.5rem;
+.appendix {
+  margin-top: var(--gutter);
 
-  ul {
+  .about {
     margin-bottom: var(--gutter);
 
-    a {
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    li > a {
       font-size: 1.4em;
+    }
+  }
+
+  .privacy-policy {
+    ul {
+      li {
+        display: flex;
+        flex-direction: row;
+        align-content: baseline;
+
+        &::before {
+          content: "• ";
+          white-space: pre;
+        }
+
+        p {
+          margin-bottom: 1.5rem;
+        }
+      }
     }
   }
 }
 
 .logos {
   display: flex;
-  margin-bottom: 4rem;
+  margin: 4rem 0;
 
   a > img {
     width: 3rem;

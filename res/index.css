@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --gutter: 6.6666666667vw;
   --num-cols: 3;
@@ -234,19 +235,34 @@ em {
   font-weight: 600;
 }
 
-.learn-more {
-  margin-top: 3.5rem;
+.appendix {
+  margin-top: var(--gutter);
 }
-.learn-more ul {
+.appendix .about {
   margin-bottom: var(--gutter);
 }
-.learn-more ul a {
+.appendix .about p {
+  margin-bottom: 1.5rem;
+}
+.appendix .about li > a {
   font-size: 1.4em;
+}
+.appendix .privacy-policy ul li {
+  display: flex;
+  flex-direction: row;
+  align-content: baseline;
+}
+.appendix .privacy-policy ul li::before {
+  content: "• ";
+  white-space: pre;
+}
+.appendix .privacy-policy ul li p {
+  margin-bottom: 1.5rem;
 }
 
 .logos {
   display: flex;
-  margin-bottom: 4rem;
+  margin: 4rem 0;
 }
 .logos a > img {
   width: 3rem;
