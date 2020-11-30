@@ -271,7 +271,7 @@ em {
   width: var(--column);
   height: var(--column);
   margin-right: var(--gutter);
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.75rem;
 }
 .feature__tagline__text {
   margin: 0;
