@@ -156,6 +156,7 @@ em {
 
   &__signup {
     width: 100%;
+    position: -webkit-sticky;
     position: sticky;
     bottom: 0;
   }
@@ -451,7 +452,6 @@ em {
       flex: 3;
       height: 100vh;
       font-size: 1.5em;
-      position: sticky;
       top: 0;
       bottom: auto;
       display: flex;
