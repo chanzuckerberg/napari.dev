@@ -6,7 +6,7 @@ This repository contains source code for the napari Developer Portal landing pag
 
 The [napari Developer Portal](https://napari.dev) is a service of the Chan Zuckerberg Initiative. napari is a consensus-based community project and an open source tool that enables high performance visualization and exploration of a broad range of imaging data, including microscopy, medical imaging, geospatial data, and more, with clearly defined governance model, mission, and values. At CZI, we support the development of open source and community run tools like napari, as part of our mission to accelerate biomedical research and help every scientist make progress faster. The CZI Imaging Team seeks to remove barriers in the analysis of imaging and microscopy data and make it easier for biologists to access emerging methods for bioimage analysis that leverage machine learning. CZI sees promise in napari and seeks to assist its development by providing resources not always available to the open source community, including dedicated user research, design, and engineering support. CZI is proud to collaborate with the science community to accelerate research and enable open science for all.
 
-## For Developers
+## Developer Guide
 
 To get a local version running, [install npm](https://www.npmjs.com/get-npm), then run:
 
