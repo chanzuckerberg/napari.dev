@@ -29,6 +29,10 @@ and navigate to the specified port (by default `localhost:8080`)
 
 All source code is licensed under the MIT license.
 
+The CZI logo is a registered trademark of the Chan Zuckerberg Initiative.
+
+The napari logo is used with permission of the napari project.
+
 Background photo is copywritten by Anna Bäckström and Emma Lundberg and used with permission.
 
 
